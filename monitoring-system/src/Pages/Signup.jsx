@@ -12,7 +12,7 @@ function Signup()
   {
     event.preventDefault()
 
-    const response = await fetch("http://localhost:18000/Signup", {
+    const response = await fetch("http://localhost:5000/Signup", {
       method : "POST",
       headers : {
         'Content-Type' : 'application/json',
@@ -27,7 +27,7 @@ function Signup()
     if(data.status === "ok")
     {
       alert('Sign up successful')
-      window.location.href = "Studenthomepage"
+      window.location.href = "Signin"
     }
     else
     {
@@ -80,12 +80,12 @@ function Signup()
         <div class="card-body">
           <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
             <i class="fab fa-google"></i>
-            Sign In with Google
+            Sign up with Google
           </a>
 
           <a class="btn btn-block btn-social btn-facebook" href="/auth/facebook" role="button">
             <i class="fab fa-facebook"></i>
-            Sign In with Facebook
+            Sign up with Facebook
           </a>
 
         </div>

@@ -4,27 +4,29 @@ const cors = require("cors")
 const mongoose = require("mongoose")
 const findOrCreate = require("mongoose-findorcreate");
 
+const md5 = require("md5")
+
 require('dotenv').config();
-const passport = require('passport')
-const session = require("express-session");
+// const passport = require('passport')
+// const session = require("express-session");
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
+// const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
-app.use(session({
-    secret: "Our secret.",
-    resave: false,
-    saveUninitialized: false
-}));
+// app.use(session({
+//     secret: "Our secret.",
+//     resave: false,
+//     saveUninitialized: false
+// }));
 
-passport.serializeUser(function(user, done){
-    done(null,user)
-});
-passport.deserializeUser(function(user, done){
-    done(null,user)
-});
+// passport.serializeUser(function(user, done){
+//     done(null,user)
+// });
+// passport.deserializeUser(function(user, done){
+//     done(null,user)
+// });
 
 app.use(cors())
 app.use(express.json())
@@ -47,7 +49,7 @@ app.post("/Signup", async(req, res) => {
     try{
         const newUser = new User({
             email : req.body.email,
-            password : req.body.password, 
+            password : md5(req.body.password), 
         })
 
         console.log(newUser)
@@ -68,7 +70,7 @@ app.post("/Signin", async(req, res) => {
 
         const user = await User.findOne({
             email : req.body.email, 
-            password : req.body.password
+            password : md5(req.body.password)
         })
 
         if(user)
@@ -82,34 +84,34 @@ app.post("/Signin", async(req, res) => {
 })
 
 
-passport.use(new GoogleStrategy({
-    clientID: "837753743241-cspfn3gqv0gg8jekm42k66i1ca2cl501.apps.googleusercontent.com",
-    clientSecret: "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",
-    callbackURL: "http://localhost:3000/auth/google/monitoringsystem",
-    userProfileURL: "https:www.googleapis.com/oauth2/v3/userinfo"
-  },
-  function(accessToken, refreshToken, profile, cb) {
-    User.findOrCreate({ googleId: profile.id }, function (err, user) {
-        return cb(err, user);
-    });
-  }
-));
+// passport.use(new GoogleStrategy({
+//     clientID: "837753743241-cspfn3gqv0gg8jekm42k66i1ca2cl501.apps.googleusercontent.com",
+//     clientSecret: "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",
+//     callbackURL: "http://localhost:3000/auth/google/monitoringsystem",
+//     userProfileURL: "https:www.googleapis.com/oauth2/v3/userinfo"
+//   },
+//   function(accessToken, refreshToken, profile, cb) {
+//     User.findOrCreate({ googleId: profile.id }, function (err, user) {
+//         return cb(err, user);
+//     });
+//   }
+// ));
 
-app.get("/auth/google",
-    passport.authenticate("google", {scope: ['profile']})
-);
+// app.get("/auth/google",
+//     passport.authenticate("google", {scope: ['profile']})
+// );
 
-app.get('/auth/google/monitoringsystem', 
-  passport.authenticate('google', 
-    { 
-        failureRedirect: '/Signin'
+// app.get('/auth/google/monitoringsystem', 
+//   passport.authenticate('google', 
+//     { 
+//         failureRedirect: '/Signin'
         
-    }),
-  function(req, res) {
-    // Successful authentication, redirect home.
-    res.redirect('/Studenthomepage');
-    console.log("Success")
-  });
+//     }),
+//   function(req, res) {
+//     // Successful authentication, redirect home.
+//     res.redirect('/Studenthomepage');
+//     console.log("Success")
+//   });
 
 
 
