@@ -1,5 +1,13 @@
 /* HTML tags */
-body  {
+
+html {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
     z-index: -1;
     background-color: #E4E9FD;
     background-image: -webkit-linear-gradient(60deg, #A683E3 50%, #E4E9FD 50%);
@@ -8,7 +16,7 @@ body  {
 /* Classes */
 
 /* Button */
-.btn {  
+.btn {
     width: 90px;
 }
 
@@ -30,7 +38,7 @@ body  {
     margin-bottom: 30%;
 }
 
-.myimage{
+.myimage {
     /* Images in the features */
     margin: auto;
     float: right;
@@ -78,7 +86,7 @@ body  {
 
 .featuresText {
     font-size: 20px;
-    color :black;
+    color: black;
 }
 
 /* button css */
@@ -88,7 +96,7 @@ body  {
 }
 
 /* About us css */
-.aboutusContainer{
+.aboutusContainer {
     background-color: white;
     z-index: 1;
     padding: 5px;
@@ -119,8 +127,8 @@ body  {
 
 .Webcam {
     position: absolute;
-    margin-left : auto;
-    margin-right : auto;
+    margin-left: auto;
+    margin-right: auto;
     left: 0;
     right: 0;
     text-align: center;
@@ -129,7 +137,7 @@ body  {
     height: 480;
 }
 
-.webcam-canvas{
+.webcam-canvas {
     position: absolute;
     margin-left: auto;
     margin-right: auto;
@@ -152,26 +160,29 @@ body  {
 /* Transitions */
 
 @keyframes features-transition {
-    from{
+    from {
         position: relative;
         left: -2000px;
     }
-    to{
+
+    to {
         position: relative;
-        left :0;
+        left: 0;
     }
-    
+
 }
 
 .headerTextInner {
     position: relative;
-    transition :2s;
+    transition: 2s;
 }
-.headertextContainer:hover .headerTextInner{
+
+.headertextContainer:hover .headerTextInner {
     -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-        transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
 }
+
 .ease-in {
     transition-timing-function: ease;
 }

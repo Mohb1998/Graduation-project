@@ -3,7 +3,6 @@ import React from "react";
 function Features(props)
 {
     return(
-
           <div className = {props.classname}>
             <div class="featuresContainer">
                 <h1 featuresTitle>{props.title}</h1>

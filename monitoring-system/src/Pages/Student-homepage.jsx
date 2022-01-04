@@ -52,15 +52,15 @@ function Studentpage()
 
   return (
     <div>
-      <Navbar/>
-      <div className="App">
-      <header className="App-header">
-        <Webcam class="Webcam" ref={webcamRef}/>
-        <canvas class="webcam-canvas" ref={canvasRef}/>
-      </header>
+    <Navbar />
+    <div className="App">
+        <header className="App-header">
+            <Webcam class="Webcam" ref={webcamRef} />
+            <canvas class="webcam-canvas" ref={canvasRef} />
+        </header>
     </div>
-    <Footer/>
-    </div>
+    <Footer />
+</div>
   );
 
 }
