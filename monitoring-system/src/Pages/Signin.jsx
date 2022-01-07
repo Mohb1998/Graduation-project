@@ -1,5 +1,7 @@
 import React from "react";
 import {useState} from "react"
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -40,56 +42,42 @@ function Signin()
       <div class="signinup-container">
     <Navbar />
 
-    <div class="container mt-5 featuresContainer1">
+    <div class="Signup-form mt-5 featuresContainer1">
         <h1>Sign in</h1>
 
-        <div class="row">
-            <div class="col-sm-8">
-                <div class="card">
-                    <div class="card-body">
+        <Form onSubmit={handleRegister}>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control type="email" placeholder="Enter email" onChange={(e)=> setEmail(e.target.value)}/>
+                <Form.Text className="text-muted">
+                  We'll never share your email with anyone else.
+                </Form.Text>
+            </Form.Group>
 
-                        <form onSubmit={handleRegister}>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control type="password" placeholder="Password" onChange={(e)=> setPassword(e.target.value)}/>
+            </Form.Group>
+            <Button variant="primary" type="submit">
+                Signin
+            </Button>
+        </Form>
 
-                            <div class="form-group">
-                                <label for="email">Email : </label>
-                                <input value={email} onChange={(e)=> setEmail(e.target.value)}
-                                type = "email"
-                                />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="password">Password : </label>
-                                <input value={password} onChange={(e)=> setPassword(e.target.value)}
-                                type="password"
-                                />
-                            </div>
-                            <br />
-                            <button type="submit" class="btn btn-dark">Login</button>
-
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4">
+        {/*<div class="col-sm-4">
                 <div class="card">
                     <div class="card-body">
                         <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
                             <i class="fab fa-google"></i>
                             Sign In with Google
                         </a>
-
-                        {/* <a class="btn btn-block btn-social btn-facebook" href="/auth/facebook" role="button">
+                        <a class="btn btn-block btn-social btn-facebook" href="/auth/facebook" role="button">
                             <i class="fab fa-facebook"></i>
                             Sign In with Facebook
-                        </a> */}
-
+                        </a>
                     </div>
                 </div>
             </div>
-
-        </div>
+        </div> */}
     </div>
 
     <Footer />

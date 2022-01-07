@@ -32,13 +32,13 @@ function Navbar(props)
                               <Link to="" style={{ textDecoration: 'none', color: 'black' }}>Contact us</Link></a>
                       </li>
                       <li>
-                          <Link to="/Signin">
-                          <Button name="Sign in" />
+                          <Link to="/Signup">
+                          <Button name="Sign up" />
                           </Link>
                       </li>
                       <li>
-                          <Link to="/Signup">
-                          <Button name="Sign up" />
+                          <Link to="/Signin">
+                          <Button name="Sign in" />
                           </Link>
                       </li>
                   </ul>
