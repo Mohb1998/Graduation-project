@@ -6,6 +6,7 @@ import Homepage from "./Pages/Homepage.jsx"
 import Signup from "./Pages/Signup.jsx"
 import StudentHomePage from "./Pages/Student-homepage.jsx"
 import Signin from "./Pages/Signin.jsx"
+import Teacherpage from "./Pages/Teacher-homepage.jsx";
 
 function App()
 {
@@ -26,6 +27,10 @@ function App()
         <Routes>
             <Route exact path='/StudentHomePage' element={<StudentHomePage/>} />
         </Routes>     
+
+        <Routes>
+            <Route exact path='/Teacherpage' element={<Teacherpage/>} />
+        </Routes>
         </div>
     )
 }
