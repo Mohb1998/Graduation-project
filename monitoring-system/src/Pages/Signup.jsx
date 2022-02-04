@@ -65,10 +65,10 @@ function Signup()
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" placeholder="Password" onChange={(e)=> setPassword(e.target.value)}/>
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" label="Student" />
                 <Form.Check type="checkbox" label="Instructor" />
-            </Form.Group>
+            </Form.Group> */}
             <Button variant="primary" type="submit">
                 Signup
             </Button>
