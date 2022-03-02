@@ -33,7 +33,7 @@ require('dotenv').config();
 
 app.use(cors())
 app.use(express.json())
-mongodb://localhost:27017
+// mongodb://localhost:27017
 mongoose.connect("mongodb+srv://admin-mohb:23121998@cluster0.tr2mg.mongodb.net/Users-database", {useNewUrlParser: true})
 
 const userSchema = new mongoose.Schema
