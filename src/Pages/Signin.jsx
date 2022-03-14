@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import GoogleButton from "../components/GoogleButton"
 
 function Signin()
 {
@@ -40,12 +41,12 @@ function Signin()
 
     return(
       <div class="signinup-container">
-    <Navbar />
+        <Navbar />
 
-    <div class="Signup-form mt-5 featuresContainer1">
-        <h1>Sign in</h1>
+        <div class="Signup-form mt-5 featuresContainer1">
+          <h1>Sign in</h1>
 
-        <Form onSubmit={handleRegister}>
+          <Form onSubmit={handleRegister}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control type="email" placeholder="Enter email" onChange={(e)=> setEmail(e.target.value)}/>
@@ -61,23 +62,16 @@ function Signin()
             <Button variant="primary" type="submit">
                 Signin
             </Button>
-        </Form>
+          </Form>
 
-        {/*<div class="col-sm-4">
-                <div class="card">
-                    <div class="card-body">
-                        <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
-                            <i class="fab fa-google"></i>
-                            Sign In with Google
-                        </a>
-                        <a class="btn btn-block btn-social btn-facebook" href="/auth/facebook" role="button">
-                            <i class="fab fa-facebook"></i>
-                            Sign In with Facebook
-                        </a>
-                    </div>
-                </div>
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <GoogleButton />
+              </div>
             </div>
-        </div> */}
+          </div>
+
     </div>
 
     <Footer />

@@ -4,6 +4,8 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import GoogleButton from "../components/GoogleButton"
+
 
 function Signup()
 {
@@ -74,21 +76,14 @@ function Signup()
             </Button>
         </Form>
   
-          {/*<div class="col-sm-4">
-                  <div class="card">
-                      <div class="card-body">
-                          <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
-                              <i class="fab fa-google"></i>
-                              Sign up with Google
-                          </a>
-                          <a class="btn btn-block btn-social btn-facebook" href="/auth/facebook" role="button">
-                              <i class="fab fa-facebook"></i>
-                              Sign up with Facebook
-                          </a>
-                      </div>
-                  </div>
+        <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <GoogleButton />
               </div>
-          </div> */}
+            </div>
+        </div>
+
       </div>
   
       <Footer />
