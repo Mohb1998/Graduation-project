@@ -15,4 +15,4 @@ To make sure that all the needed dependecies have been added
 
 ## To run the web application
 you must be in the Senior Projects directory and then write the command 
-### `npm instsall`
+### `npm start`
