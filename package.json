@@ -23,6 +23,7 @@
     "flashphoner": "^1.0.0",
     "font-awesome": "^4.7.0",
     "handsfree": "^8.5.1",
+    "multer": "^1.4.4",
     "passport": "^0.5.0",
     "passport-google-oauth20": "^2.0.0",
     "peer": "^0.6.1",

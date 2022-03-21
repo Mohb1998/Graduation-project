@@ -13,6 +13,7 @@ function Signup()
     const [fname, setFname] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [image, setImage] = useState('')
 
     async function handleRegister(event)
     {
@@ -24,8 +25,11 @@ function Signup()
           'Content-Type' : 'application/json',
         },
         body : JSON.stringify({
+          fname,
+          lname,
           email,
           password,
+          image,
         }),
       })
 
@@ -67,13 +71,17 @@ function Signup()
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" placeholder="Password" onChange={(e)=> setPassword(e.target.value)}/>
             </Form.Group>
-            {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" label="Student" />
                 <Form.Check type="checkbox" label="Instructor" />
-            </Form.Group> */}
+            </Form.Group>
+
+              <Form.Label>Image upload</Form.Label>
+              <Form.Control type="file" onChange={(e)=> setImage(e.target.value)}/>
+
             <Button variant="primary" type="submit">
                 Signup
-            </Button>
+            </Button>                 
         </Form>
   
         <div class="col-sm-4">
