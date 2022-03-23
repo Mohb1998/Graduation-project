@@ -4,16 +4,18 @@ import {Routes,Route} from "react-router-dom";
 
 
 //Hello
-import Homepage from "./Pages/Homepage.jsx"
-import Signup from "./Pages/Signup.jsx"
-import StudentHomePage from "./Pages/Student-homepage.jsx"
-import Signin from "./Pages/Signin.jsx"
+import Homepage from "./Pages/Homepage.jsx";
+import Signup from "./Pages/Signup.jsx";
+import StudentHomePage from "./Pages/Student-homepage.jsx";
+import Signin from "./Pages/Signin.jsx";
 import Teacherpage from "./Pages/Teacher-homepage.jsx";
+import ImageUpload from "./Pages/ImageUpload.jsx";
 
 function App()
 {
     return(
         <div>
+        /* A react-router-dom component. */
         <Routes>
             <Route exact path='/' element={<Homepage/>} />
         </Routes>
@@ -32,6 +34,10 @@ function App()
 
         <Routes>
             <Route exact path='/Teacherpage' element={<Teacherpage/>} />
+        </Routes>
+
+        <Routes>
+            <Route exact path='/ImageUpload' element={<ImageUpload/>} />
         </Routes>
         </div>
     )

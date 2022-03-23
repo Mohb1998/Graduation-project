@@ -2,6 +2,7 @@ import React from "react";
 import {useState} from "react"
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import GoogleButton from "../components/GoogleButton"
@@ -13,8 +14,15 @@ function Signup()
     const [fname, setFname] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [image, setImage] = useState('')
 
+   /**
+    * It takes in an event object, and then uses the fetch function to send a POST request to the
+    * server. The body of the request is a JSON object containing the user's information. The server
+    * then returns a response, which is parsed as a JSON object. If the response is ok, then the user
+    * is redirected to the signin page. Otherwise, an error message is displayed
+    * @param event - The event that triggered the function.
+    */
+   
     async function handleRegister(event)
     {
       event.preventDefault()
@@ -29,7 +37,6 @@ function Signup()
           lname,
           email,
           password,
-          image,
         }),
       })
 
@@ -37,7 +44,7 @@ function Signup()
       if(data.status === "ok")
       {
         alert('Sign up successful')
-        window.location.href = "Signin"
+        window.location.href = "ImageUpload"
       }
       else
       {
@@ -75,10 +82,7 @@ function Signup()
                 <Form.Check type="checkbox" label="Student" />
                 <Form.Check type="checkbox" label="Instructor" />
             </Form.Group>
-
-              <Form.Label>Image upload</Form.Label>
-              <Form.Control type="file" onChange={(e)=> setImage(e.target.value)}/>
-
+            
             <Button variant="primary" type="submit">
                 Signup
             </Button>                 

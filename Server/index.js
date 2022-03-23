@@ -1,11 +1,11 @@
 const express = require("express")
 const app =express()
+
 const cors = require("cors")
 const mongoose = require("mongoose")
 const findOrCreate = require("mongoose-findorcreate");
 
 const multer = require("multer");
-const ImageModel = require("./image.model");
 
 const md5 = require("md5");
 const e = require("express");
@@ -16,6 +16,7 @@ app.use(cors())
 app.use(express.json())
 
 // mongodb://localhost:27017   
+/* This is the code that connects to the database. */
 mongoose.connect("mongodb+srv://admin-mohb:23121998@cluster0.tr2mg.mongodb.net/Users-database", {useNewUrlParser: true})
 
 const userSchema = new mongoose.Schema
@@ -28,47 +29,34 @@ userSchema.plugin(findOrCreate)
 
 const User = mongoose.model("User", userSchema)
 
-
-const Storage = multer.diskStorage({
-    destination: "uploads",
-    filename : (req, image, cb) =>{
-        cb(null, image.originalname)
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'public')
     },
-});
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + '-' + file.originalname)
+    }
+})
 
-const upload = multer({
-    storage: Storage
-}).single('studentImage')
+const upload = multer({storage}).single('file')
 
+app.post('/upload', (req,res) => {
+    upload(req, res, (err) => {
+        if(err){
+            return res.status(500).json(err)
+        }
+
+        return res.status(200).send(req.file)
+    })
+})
+
+/* A function that is called when the user sends a request to the server. */
 app.post("/Signup", async(req, res) => {
-
-    console.log(req.body);
-
 
     try{
         const newUser = new User({
             email : req.body.email,
             password : md5(req.body.password),
-        })
-
-        upload(req, res, (err) => {
-            if(err)
-            {
-                console.log(err)
-            }
-            else
-            {
-                const newImage = new ImageModel({
-                    name : req.body.fname,
-                    image: {
-                        data : req.file.filename,
-                        contentType: "image/jpg"
-                    }
-                })
-
-                newImage.save()
-
-            }
         })
 
         console.log(newUser)
@@ -85,6 +73,11 @@ app.post("/Signup", async(req, res) => {
     }
 })
 
+app.post("/ImageUpload", async(req,res) => {
+
+})
+
+/* A function that is called when the user sends a request to the server. */
 app.post("/Signin", async(req, res) => {
 
         const user = await User.findOne({
