@@ -29,13 +29,34 @@ function ImageUpload()
         const data = new FormData();
         data.append('file', file);
 
-        axios.post("//localhost:5000/upload", data)
+        axios.post("//localhost:5000/Upload", data)
             .then((e) => {
                 console.log("Success")
             })
             .catch((e) => {
                 console.log("Error")
             })
+
+    //     const response = fetch("http://localhost:5000/Upload", {
+    //     method : "POST",
+    //     headers : {
+    //       'Content-Type' : 'application/json',
+    //     },
+    //     body : JSON.stringify({
+    //       file
+    //     }),
+    //   })
+
+    //   const data =  response.json()
+    //   if(data.status === "ok")
+    //   {
+    //     alert('Upload successsful')
+    //     window.location.href = "Signin"
+    //   }
+    //   else
+    //   {
+    //     alert('Failed')
+    //   }
 
     }
 
@@ -46,14 +67,14 @@ function ImageUpload()
       <div class="Signup-form mt-5 featuresContainer1">
           <h1>Upload your images</h1>
 
-          <Form onSubmit={onSubmit}>
+            <Form onSubmit={onSubmit}>
               <Form.Label>Image upload</Form.Label>
-              <Form.Control type="file" onChange={inputChange}/>
+              <Form.Control type="file" name="file" id="file" onChange={inputChange}/>
             
-            <Button variant="primary" type="submit">
-                Submit
-            </Button>                 
-        </Form>
+                <Button variant="primary" type="submit">
+                    Submit
+                </Button>                 
+            </Form>
 
       </div>
   

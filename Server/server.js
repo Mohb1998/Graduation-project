@@ -1,62 +1,85 @@
-const express = require("express")
-const app =express()
+const express = require("express");
+const app =express();
 
-const cors = require("cors")
-const mongoose = require("mongoose")
+const cors = require("cors");
+
+const mongoose = require("mongoose");
 const findOrCreate = require("mongoose-findorcreate");
 
 const multer = require("multer");
+const {GridFsStorage} = require('multer-gridfs-storage');
+const Grid = require("gridfs-stream");
+
+
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 const md5 = require("md5");
-const e = require("express");
 
 require('dotenv').config();
 
 app.use(cors())
 app.use(express.json())
 
+
+var fs = require('fs');
+var path = require('path');
+const crypto = require("crypto")
+
 // mongodb://localhost:27017   
-/* This is the code that connects to the database. */
 mongoose.connect("mongodb+srv://admin-mohb:23121998@cluster0.tr2mg.mongodb.net/Users-database", {useNewUrlParser: true})
+
+const mongoURL = "mongodb+srv://admin-mohb:23121998@cluster0.tr2mg.mongodb.net/Users-database"
+const conn = mongoose.createConnection(mongoURL)
+
 
 const userSchema = new mongoose.Schema
 ({
     email: {type : String, required : true, unique : true},
     password: {type:String, required:true},
+    image: {type: Buffer, contentType: String}
+
 }, {collection: 'user'})
-
 userSchema.plugin(findOrCreate)
-
 const User = mongoose.model("User", userSchema)
 
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, 'public')
-    },
-    filename: (req, file, cb) => {
-        cb(null, Date.now() + '-' + file.originalname)
+
+let gfs;
+conn.once('open', () => {
+    gfs = Grid(conn.db, mongoose.mongo)
+    gfs.collection('uploads')
+})
+
+const storage = new GridFsStorage({
+    url: mongoURL,
+    file: (req, file) => {
+      return new Promise((resolve, reject) => {
+        crypto.randomBytes(16, (err, buf) => {
+          if (err) {
+            return reject(err);
+          }
+          const filename = buf.toString('hex') + path.extname(file.originalname);
+          const fileInfo = {
+            filename: filename,
+            bucketName: 'uploads'
+          };
+          resolve(fileInfo);
+        });
+      });
     }
-})
+  });
+  const upload = multer({ storage });
 
-const upload = multer({storage}).single('file')
-
-app.post('/upload', (req,res) => {
-    upload(req, res, (err) => {
-        if(err){
-            return res.status(500).json(err)
-        }
-
-        return res.status(200).send(req.file)
-    })
-})
 
 /* A function that is called when the user sends a request to the server. */
-app.post("/Signup", async(req, res) => {
+app.post("/Signup", upload.single('file'), async(req, res) => {
 
     try{
         const newUser = new User({
             email : req.body.email,
             password : md5(req.body.password),
+            image : req.body.file,
         })
 
         console.log(newUser)
@@ -71,10 +94,6 @@ app.post("/Signup", async(req, res) => {
         console.log(err)
         res.json({status : 'error', error : err})
     }
-})
-
-app.post("/ImageUpload", async(req,res) => {
-
 })
 
 /* A function that is called when the user sends a request to the server. */

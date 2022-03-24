@@ -15,7 +15,6 @@ function App()
 {
     return(
         <div>
-        /* A react-router-dom component. */
         <Routes>
             <Route exact path='/' element={<Homepage/>} />
         </Routes>
