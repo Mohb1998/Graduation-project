@@ -9,7 +9,6 @@ import Signup from "./Pages/Signup.jsx";
 import StudentHomePage from "./Pages/Student-homepage.jsx";
 import Signin from "./Pages/Signin.jsx";
 import Teacherpage from "./Pages/Teacher-homepage.jsx";
-import ImageUpload from "./Pages/ImageUpload.jsx";
 
 function App()
 {

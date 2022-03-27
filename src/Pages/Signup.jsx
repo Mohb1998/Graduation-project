@@ -10,50 +10,42 @@ import GoogleButton from "../components/GoogleButton"
 
 function Signup()
 {
-    const [lname, setLname] = useState('')
-    const [fname, setFname] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [file, setFile] = useState('')
 
-   /**
-    * It takes in an event object, and then uses the fetch function to send a POST request to the
-    * server. The body of the request is a JSON object containing the user's information. The server
-    * then returns a response, which is parsed as a JSON object. If the response is ok, then the user
-    * is redirected to the signin page. Otherwise, an error message is displayed
-    * @param event - The event that triggered the function.
-    */
-   
-    async function handleRegister(event)
-    {
-      event.preventDefault()
+    const [values, setValues] = useState({
+      name:'',
+      email:'',
+      password:'',
+      photo:'',
+      error:'',
+      success:false,
+      formData: new FormData()
+    })
 
-      const file = new FormData();
-      file.append('file', file);
+    const {name,formData,photo,email,password,error,success} = values
 
-      const response = await fetch("http://localhost:5000/Signup", {
-        method : "POST",
-        headers : {
-          'Content-Type' : 'application/json',
-        },
-        body : JSON.stringify({
-          email,
-          password, 
-          file,
-        }),
-      })
+    const onHandleChange = name => event =>{
+      const value=(name==='photo') ? event.target.files[0] : event.target.value;
+      formData.set(name, value);
+      console.log(value)
+      setValues({...values,[name]:value})
+    }
 
-      const data = await response.json()
-      if(data.status === "ok")
-      {
-        alert('Sign up successful')
-        //window.location.href = "ImageUpload"
-      }
-      else
-      {
-        alert('Please check your username and password')
-      }
-   }
+    const api = (data) => {
+      return fetch("http://localhost:5000/Signup",{
+        method: "POST",
+        body: data
+      }).then(res => res.json()).catch(err => console.log(err))
+    }
+
+  //     if(data.status === "ok")
+  //     {
+  //       alert('Sign up successful')
+  //       //window.location.href = "ImageUpload"
+  //     }
+  //     else
+  //     {
+  //       alert('Please check your username and password')
+  //     }
 
     return(
       <div class="signinup-container">
@@ -62,38 +54,40 @@ function Signup()
       <div class="Signup-form mt-5 featuresContainer1">
           <h1>Sign up</h1>
 
-          <Form enctype="multipart/form-data" onSubmit={handleRegister}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>First name</Form.Label>
-                <Form.Control type="text" placeholder="Enter your first name" onChange={(e)=> setFname(e.target.value)}/>
+          <Form onSubmit={(e) => e.preventDefault()}> 
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label>First name</Form.Label>
+                  <Form.Control type="text" placeholder="Enter your first name" onChange={onHandleChange('name')}/>
 
-                <Form.Label>Last name</Form.Label>
-                <Form.Control type="text" placeholder="Enter your last name" onChange={(e)=> setLname(e.target.value)}/>
+                  {/* <Form.Label>Last name</Form.Label>
+                  <Form.Control type="text" placeholder="Enter your last name"/> */}
 
-                <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" onChange={(e)=> setEmail(e.target.value)}/>
-                <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
-                </Form.Text>
-            </Form.Group>
+                  <Form.Label>Email address</Form.Label>
+                  <Form.Control type="email" placeholder="Enter email" onChange={onHandleChange('email')}/>
+                  <Form.Text className="text-muted">
+                      We'll never share your email with anyone else.
+                  </Form.Text>
+              </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" onChange={(e)=> setPassword(e.target.value)}/>
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Student" />
-                <Form.Check type="checkbox" label="Instructor" />
-            </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control type="password" placeholder="Password" onChange={onHandleChange('password')}/>
+              </Form.Group>
 
-            <Form.Label>Image upload</Form.Label>
-            <Form.Control type="file" name="file" id="file" onChange={(e) => setFile(e.target.files[0])}/>
-            
-            <Button variant="primary" type="submit">
-                Signup
-            </Button>                 
-        </Form>
-  
+              {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                  <Form.Check type="checkbox" label="Student" />
+                  <Form.Check type="checkbox" label="Instructor" />
+              </Form.Group> */}
+
+              <Form.Label>Image upload</Form.Label>
+              <Form.Control type="file" onChange={onHandleChange('photo')}/>
+              
+              <Button onClick={() => api(formData).then(res => console.log("User saved"))}>
+                  Signup
+              </Button>                 
+          </Form>
+
+        
         <div class="col-sm-4">
             <div class="card">
               <div class="card-body">
