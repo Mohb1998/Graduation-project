@@ -33,10 +33,6 @@ function App()
         <Routes>
             <Route exact path='/Teacherpage' element={<Teacherpage/>} />
         </Routes>
-
-        <Routes>
-            <Route exact path='/ImageUpload' element={<ImageUpload/>} />
-        </Routes>
         </div>
     )
 }

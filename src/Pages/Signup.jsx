@@ -26,14 +26,15 @@ function Signup()
     const onHandleChange = name => event =>{
       const value=(name==='photo') ? event.target.files[0] : event.target.value;
       formData.set(name, value);
-      console.log(value)
+      //console.log(value)
       setValues({...values,[name]:value})
     }
 
     const api = (data) => {
       return fetch("http://localhost:5000/Signup",{
         method: "POST",
-        body: data
+        body: data,
+        multiples: true
       }).then(res => res.json()).catch(err => console.log(err))
     }
 
@@ -80,7 +81,7 @@ function Signup()
               </Form.Group> */}
 
               <Form.Label>Image upload</Form.Label>
-              <Form.Control type="file" onChange={onHandleChange('photo')}/>
+              <Form.Control type="file" multiple onChange={onHandleChange('photo')}/>
               
               <Button onClick={() => api(formData).then(res => console.log("User saved"))}>
                   Signup
