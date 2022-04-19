@@ -15,7 +15,7 @@ const Landingpage = (props) => {
           <span className={styles['text02']}>Twitter</span>
           <img
             alt="Vector314"
-            src="/Images/vector314-3ra7.svg"
+            src="/images/vector314-3ra7.svg"
             className={styles['svg']}
           />
           <img
@@ -140,6 +140,7 @@ const Landingpage = (props) => {
         <span className={styles['text27']}>
           AAST very best working towards a better learning experience
         </span>
+
         <div className={styles['features274']}>
           <img
             alt="feature2275"
@@ -153,6 +154,7 @@ const Landingpage = (props) => {
             well as the class average
           </span>
         </div>
+
         <div className={styles['feature277']}>
           <img
             alt="feature1278"
@@ -165,6 +167,7 @@ const Landingpage = (props) => {
             any system failure
           </span>
         </div>
+
         <div className={styles['feature2710']}>
           <img
             alt="feature32711"
