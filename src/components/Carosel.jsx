@@ -1,6 +1,5 @@
 import React from "react";
 import {Carousel} from 'react-bootstrap';
-import Button from "./Button"
 // Check css style sheet for fixes
 
 function Carosels()

@@ -5,7 +5,6 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Carosel from "../components/Carosel";
 import Features from "../components/Features";
-import ContactUs from "../components/ContantUs";
 import AboutUs from "../components/AboutUs"
 
 function Homepage()
@@ -36,7 +35,6 @@ function Homepage()
                 content="With our random student picker we make sure you are always focused and taking advantage of every second."
             />
             <AboutUs/>
-            <ContactUs/>
 
             <Footer/>
         </div>

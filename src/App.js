@@ -2,13 +2,12 @@ import React from "react";
 
 import {Routes,Route} from "react-router-dom";
 
-
-//Hello
-import Homepage from "./Pages/Homepage.jsx";
-import Signup from "./Pages/Signup.jsx";
-import StudentHomePage from "./Pages/Student-homepage.jsx";
-import Signin from "./Pages/Signin.jsx";
-import Teacherpage from "./Pages/Teacher-homepage.jsx";
+import Homepage from "./views/Homepage.jsx";
+import Signup from "./views/Signup.jsx";
+import StudentHomePage from "./views/Student-homepage.jsx";
+import Signin from "./views/Signin.jsx";
+import Teacherpage from "./views/Teacher-homepage.jsx";
+import Landingpage from "./views/Landing page"
 
 function App()
 {
@@ -32,6 +31,10 @@ function App()
 
         <Routes>
             <Route exact path='/Teacherpage' element={<Teacherpage/>} />
+        </Routes>
+
+        <Routes>
+            <Route exact path='/Landingpage' element={<Landingpage/>} />
         </Routes>
         </div>
     )
