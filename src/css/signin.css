@@ -117,23 +117,19 @@
 .signin271-image1 {
   top: 147px;
   left: 259px;
-  width: 597px;
-  height: 52px;
+  width: 526px;
   position: absolute;
-  object-fit: cover;
-  border-color: transparent;
   background-color: rgba(255, 255, 255, 1);
 }
 .signin271-image2 {
   top: 288px;
   left: 259px;
-  width: 597px;
-  height: 52px;
+  width: 526px;
   position: absolute;
-  object-fit: cover;
-  border-color: transparent;
   background-color: rgba(255, 255, 255, 1);
 }
+
+
 .signin271-text04 {
   top: 431px;
   left: 31px;

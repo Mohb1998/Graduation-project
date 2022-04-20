@@ -119,7 +119,7 @@ app.post("/Signin", async (req, res) => {
 
   const user = await User.findOne({
     email: req.body.email,
-    password: md5(req.body.password)
+    password: req.body.password
   })
 
   if (user) {
