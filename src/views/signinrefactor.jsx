@@ -3,11 +3,12 @@ import {useState} from "react"
 import Form from 'react-bootstrap/Form'
 
 import GoogleButton from "../components/GoogleButton"
-
+import Navbar from '../components/Navbar'
 
 import '../css/signin.css'
 
-function Signin271() {
+function Signin() 
+{
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -68,13 +69,15 @@ function Signin271() {
 
         </div>
 
-        <div className="signin271-navbar1721">
+        {/* <div className="signin271-navbar1721">
           <span className="signin271-text05">SMR</span>
           <span className="signin271-text06">Features</span>
           <span className="signin271-text07">About us</span>
           <span className="signin271-text08">Team</span>
           <span className="signin271-text09">Contact us</span>
-        </div>
+        </div> */}
+
+        <Navbar />
         
         <img
           alt="Ellipse3546"
@@ -104,4 +107,4 @@ function Signin271() {
   )
 }
 
-export default Signin271
+export default Signin

@@ -43,6 +43,23 @@
   text-decoration: none;
 }
 
+.text00 {
+  top: 10px;
+  left: 600px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 32px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
 .text01 {
   top: 10px;
   left: 1549px;

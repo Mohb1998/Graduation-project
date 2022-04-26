@@ -1,6 +1,4 @@
-/* HTML tags */
-
-html {
+/* html {
     margin: 0;
     height: 100%;
 }
@@ -13,9 +11,6 @@ body {
     background-image: -webkit-linear-gradient(60deg, #A683E3 50%, #E4E9FD 50%);
 }
 
-/* Classes */
-
-/* Button */
 .btn {
     width: 90px;
 }
@@ -39,12 +34,10 @@ body {
 }
 
 .myimage {
-    /* Images in the features */
     margin: auto;
     float: right;
 }
 
-/* Features css */
 .featuresContainer1 {
     background-color: white;
     z-index: 1;
@@ -89,13 +82,11 @@ body {
     color: black;
 }
 
-/* button css */
 .btn {
     margin-left: 50%;
     text-align: center;
 }
 
-/* About us css */
 .aboutusContainer {
     background-color: white;
     z-index: 1;
@@ -105,7 +96,6 @@ body {
     margin-bottom: 30px;
 }
 
-/* Sign in and up css */
 .signinup-container {
     z-index: 1;
 }
@@ -116,7 +106,6 @@ body {
     width: 700px;
 }
 
-/* Contact us */
 
 .contactus {
     margin-left: auto;
@@ -129,7 +118,6 @@ body {
     margin-right: auto;
 }
 
-/* Footer */
 
 .copyright {
     text-align: center;
@@ -137,7 +125,6 @@ body {
 }
 
 
-/* Transitions */
 
 @keyframes features-transition {
     from {
@@ -181,4 +168,4 @@ body {
 object {
     width: 100%;
     height: 100%;
-}
+} */
