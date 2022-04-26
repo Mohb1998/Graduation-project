@@ -33,7 +33,7 @@ function Signin()
     if(data.status === "ok")
     {
       alert('Sign in successful')
-      window.location.href = "Landingpage"
+      window.location.href = "Student-homepage"
     }
     else
     {

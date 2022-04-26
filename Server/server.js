@@ -27,6 +27,7 @@ var fs = require('fs');
 
 
 // mongodb://localhost:27017   
+//Connecting to the online database to store and retrieve data
 mongoose.connect("mongodb+srv://admin-mohb:23121998@cluster0.tr2mg.mongodb.net/Users-database", {
     useNewUrlParser: true
   })
@@ -35,6 +36,7 @@ mongoose.connect("mongodb+srv://admin-mohb:23121998@cluster0.tr2mg.mongodb.net/U
   }).catch(err => console.log("Unable to connect"))
 
 
+/* This is creating a schema for the user. */
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -115,6 +117,10 @@ const userData = (req, res) => {
 app.post("/Signup", userData)
 
 
+/* This is a post request that is used to sign in the user. It takes in the email and password from the
+request body and checks if the user exists in the database. If the user exists, it returns a status
+of ok and a user of true. If the user doesn't exist, it returns a status of error and a user of
+false. */
 app.post("/Signin", async (req, res) => {
 
   const user = await User.findOne({
@@ -135,6 +141,7 @@ app.post("/Signin", async (req, res) => {
   }
 })
 
+/* This is a port that is used to listen to the server. */
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () => {
   console.log("Server running on " + PORT)

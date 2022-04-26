@@ -24,7 +24,6 @@ function Signup ()
   const onHandleChange = name => event =>{
     const value=(name==='photo') ? event.target.files[0] : event.target.value;
     formData.set(name, value);
-    //console.log(value)
     setValues({...values,[name]:value})
   }
 
@@ -36,15 +35,17 @@ function Signup ()
     }).then(res => res.json()).catch(err => console.log(err))
   }
 
-//     if(data.status === "ok")
-//     {
-//       alert('Sign up successful')
-//       //window.location.href = "ImageUpload"
-//     }
-//     else
-//     {
-//       alert('Please check your username and password')
-//     }
+    // const data = api.json()
+
+    // if(data.status === "ok")
+    // {
+    //   alert('Sign up successful')
+    //   window.location.href = "signin-refactor"
+    // }
+    // else
+    // {
+    //   alert('Unable to sign you up chech you entered everyting.')
+    // }
 
   return (
     <div className="signup179-container">

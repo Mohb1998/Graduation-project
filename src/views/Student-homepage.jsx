@@ -4,16 +4,6 @@ import Footer from "../components/Footer"
 
 function Studentpage()
 {
-
-   window.handsfree.update({
-    hands: true,
-    facemesh:true,
-  })
-
-  window.handsfree.enablePlugins('browser')
-  window.handsfree.start()
-  
-
   return (
     <div>
       <Navbar />
@@ -22,5 +12,4 @@ function Studentpage()
   );
 
 }
-
 export default Studentpage;
