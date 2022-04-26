@@ -28,7 +28,7 @@ var fs = require('fs');
 
 // mongodb://localhost:27017   
 //Connecting to the online database to store and retrieve data
-mongoose.connect("mongodb+srv://admin-mohb:23121998@cluster0.tr2mg.mongodb.net/Users-database", {
+mongoose.connect(process.env.MONGODB, {
     useNewUrlParser: true
   })
   .then(res => {
