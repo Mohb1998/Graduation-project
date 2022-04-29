@@ -2,10 +2,9 @@ import React from "react";
 import styles from '../css/landingpage.module.css'
 
 
-function Features(props)
-{
-    return(
-        <div>
+function Features(props) {
+  return (
+      <div>
              <div className={styles['features274']}>
           <img
             alt="feature2275"
@@ -44,8 +43,8 @@ function Features(props)
             able to achieve a classroom feeling
           </span>
         </div>
-        </div>
-    )
+    </div>
+  )
 }
 
 export default Features;

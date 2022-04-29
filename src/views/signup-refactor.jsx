@@ -1,51 +1,63 @@
 import React from 'react'
-import {useState} from "react"
+import {
+  useState
+} from "react"
 import Form from 'react-bootstrap/Form'
 
 import '../css/signup.css'
 
 import Navbar from '../components/Navbar'
 
-function Signup () 
-{
+function Signup() {
 
   const [values, setValues] = useState({
-    name:'',
-    email:'',
-    password:'',
-    photo:'',
-    error:'',
-    success:false,
+    name: '',
+    email: '',
+    password: '',
+    photo: '',
+    error: '',
+    success: false,
     formData: new FormData()
   })
 
-  const {name,formData,photo,email,password,error,success} = values
+  const {
+    name,
+    formData,
+    photo,
+    email,
+    password,
+    error,
+    success
+  } = values
 
-  const onHandleChange = name => event =>{
-    const value=(name==='photo') ? event.target.files[0] : event.target.value;
+  const onHandleChange = name => event => {
+    const value = (name === 'photo') ? event.target.files[0] : event.target.value;
     formData.set(name, value);
-    setValues({...values,[name]:value})
+    setValues({
+      ...values,
+      [name]: value
+    })
   }
 
   const api = (data) => {
-    return fetch("http://localhost:5000/Signup",{
+    return fetch("http://localhost:5000/Signup", {
       method: "POST",
       body: data,
       multiples: true
     }).then(res => res.json()).catch(err => console.log(err))
   }
 
-    // const data = api.json()
+  // const data = api.json()
 
-    // if(data.status === "ok")
-    // {
-    //   alert('Sign up successful')
-    //   window.location.href = "signin-refactor"
-    // }
-    // else
-    // {
-    //   alert('Unable to sign you up chech you entered everyting.')
-    // }
+  // if(data.status === "ok")
+  // {
+  //   alert('Sign up successful')
+  //   window.location.href = "signin-refactor"
+  // }
+  // else
+  // {
+  //   alert('Unable to sign you up chech you entered everyting.')
+  // }
 
   return (
     <div className="signup179-container">

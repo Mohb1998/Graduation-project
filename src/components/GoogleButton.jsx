@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import GoogleLogin from 'react-google-login'
 
+require('dotenv').config();
+
 export class GoogleButton extends Component {
 
   responseGoogle=(response) => {
@@ -12,7 +14,7 @@ export class GoogleButton extends Component {
     return (
       <div>
         <GoogleLogin
-          clientId="295904385270-44p1pdo9e7v9g25l0dm9plcvtelpo576.apps.googleusercontent.com"
+          clientId={process.env.MONGODB}
           buttonText="Login"
           onSuccess={this.responseGoogle}
           onFailure={this.responseGoogle}

@@ -2,8 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 
-function Studentpage()
-{
+function Studentpage() {
   return (
     <div>
       <Navbar />

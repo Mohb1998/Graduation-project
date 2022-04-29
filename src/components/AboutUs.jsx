@@ -2,10 +2,9 @@ import React from "react";
 import styles from '../css/landingpage.module.css'
 
 
-function AboutUs(props)
-{
-    return(
-       <div>
+function AboutUs(props) {
+  return (
+<div>
            <div className={styles['aboutus62714']}>
           <img
             alt="Ellipse42715"
@@ -102,7 +101,7 @@ function AboutUs(props)
           AAST very best working towards a better learning experience
         </span>
        </div>
-    )
+  )
 }
 
 export default AboutUs;

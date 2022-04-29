@@ -1,10 +1,11 @@
 import React from "react";
-import {Carousel} from 'react-bootstrap';
+import {
+    Carousel
+} from 'react-bootstrap';
 // Check css style sheet for fixes
 
-function Carosels()
-{
-    return(
+function Carosels() {
+    return (
         <div>
             <div class="caroselContainer">
                 <Carousel fade>
