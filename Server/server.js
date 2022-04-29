@@ -16,8 +16,6 @@ app.use(bodyParser.urlencoded({
 }))
 app.use(bodyParser.json())
 
-const md5 = require("md5");
-
 require('dotenv').config();
 
 app.use(cors())
@@ -73,7 +71,9 @@ const User = mongoose.model("User", userSchema)
  * If the fields don't exist, it returns an error
  */
 const userData = (req, res) => {
-  const form = new formidable.IncomingForm({ multiples: true });
+  const form = new formidable.IncomingForm({
+    multiples: true
+  });
 
   form.parse(req, (err, fields, file) => {
     if (fields) {
@@ -140,6 +140,21 @@ app.post("/Signin", async (req, res) => {
     })
   }
 })
+
+//This will be the function used to retrieve the data from the database and access the images
+//We should use the email as it is a unique atribute and can't be a duplicate
+// User.find({email:"mohebkhaled16@yahoo.com"}, (err, data) => {
+//   console.log("Searching database ...")
+//   if(err)
+//   {
+//     console.log("not found")
+//     console.log(err)
+//   }
+//   else{
+//     console.log("found")
+//     console.log(data)
+//   }
+// })
 
 /* This is a port that is used to listen to the server. */
 const PORT = process.env.PORT || 5000
