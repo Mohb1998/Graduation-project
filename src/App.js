@@ -14,6 +14,7 @@ function App()
     return(
         <div>
 
+        /* Routing the pages to the correct page. */
         <Routes>
             <Route exact path='/' element={<Landingpage/>} />
         </Routes>
