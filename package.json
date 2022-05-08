@@ -27,6 +27,7 @@
     "font-awesome": "^4.7.0",
     "formidable": "^2.0.1",
     "handsfree": "^8.5.1",
+    "ion-sdk-js": "^1.8.2",
     "passport": "^0.5.0",
     "passport-google-oauth20": "^2.0.0",
     "peer": "^0.6.1",

@@ -7,14 +7,14 @@ import StudentHomePage from "./views/Student-homepage.jsx";
 
 import Landingpage from "./views/Landing page"
 import Signin from "./views/signinrefactor.jsx"
-import Signup from "./views/signup-refactor"
+import Signup from "./views/signup-refactor.jsx"
+import MeetingRoom from "./views/meeting-Room.jsx";
 
 function App()
 {
     return(
         <div>
 
-        /* Routing the pages to the correct page. */
         <Routes>
             <Route exact path='/' element={<Landingpage/>} />
         </Routes>
@@ -33,6 +33,10 @@ function App()
 
         <Routes>
             <Route exact path='/Teacherpage' element={<Teacherpage/>} />
+        </Routes>
+
+        <Routes>
+            <Route exact path='/MeetingRoom' element={<MeetingRoom/>} />
         </Routes>
 
         </div>
