@@ -1,7 +1,5 @@
-import React from 'react'
-import {
-  useState
-} from "react"
+import React, { useState } from 'react'
+
 import Form from 'react-bootstrap/Form'
 
 import '../css/signup.css'
@@ -49,7 +47,7 @@ function Signup() {
 
   // const data = api.json()
 
-  // if(data.status === "ok")
+  // if(res.status === "ok")
   // {
   //   alert('Sign up successful')
   //   window.location.href = "signin-refactor"
@@ -63,6 +61,7 @@ function Signup() {
     <div className="signup179-container">
 
       <div className="signup179-signup179">
+
         <Navbar />
         <img
           alt="Ellipse51717"
@@ -88,7 +87,10 @@ function Signup() {
             <span className="signup179-text09">Confirm password :</span>
             <span className="signup179-text10">Email :</span>
 
+        <Form>
           <Form.Control style={{width:"526px"}} className="signup179-image1" type="text" placeholder="Enter your first name" onChange={onHandleChange('name')}/>
+
+          <Form.Control style={{width:"526px"}} className="signup179-image5" type="email" placeholder="Enter email" onChange={onHandleChange('email')}/>
 
           <Form.Control style={{width:"526px"}} className="signup179-image2" type="password" placeholder="Password" onChange={onHandleChange('password')}/>
 
@@ -96,15 +98,14 @@ function Signup() {
 
           <Form.Control style={{width:"526px"}} className="signup179-image4" type="file" multiple onChange={onHandleChange('photo')}/>
           
-          <button className="signup179-button577" onClick={() => api(formData).then(res => console.log("User saved"))}>
+          <button className="signup179-button577" onClick={ () => api(formData).then(res => console.log("User saved")).then(res => window.location.href = "/Studenthomepage") }>
             <span className="signup179-text05">Sign up</span>
           </button>   
-
-          <Form.Control style={{width:"526px"}} className="signup179-image5" type="email" placeholder="Enter email" onChange={onHandleChange('email')}/>
-
+        </Form>
         </div>
         <span className="signup179-text11">Image upload :</span>
       </div>
+
     </div>
   )
 }

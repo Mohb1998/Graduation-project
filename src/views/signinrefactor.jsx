@@ -32,7 +32,7 @@ function Signin() {
 
     if (data.status === "ok") {
       alert('Sign in successful')
-      window.location.href = "Student-homepage"
+      window.location.href = "Studenthomepage"
     } else {
       alert('Please check your username and password')
     }
@@ -62,6 +62,7 @@ function Signin() {
       <button className="signin271-button543" variant="primary" type="submit">
         <span className="signin271-text">Sign in</span>
       </button>
+      
     </Form>
 
   </div>
@@ -100,6 +101,7 @@ function Signin() {
       </div>
     </div>
   </div>
+
 </div>
   )
 }
