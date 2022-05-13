@@ -1,11 +1,9 @@
-// import Navbar from "../components/Navbar"
-// import Footer from "../components/Footer"
-
 import React, { useEffect, useRef } from 'react';
 import { Client, LocalStream } from 'ion-sdk-js';
 import { IonSFUJSONRPCSignal } from 'ion-sdk-js/lib/signal/json-rpc-impl';
 
 function MeetingRoom() {
+
   const pubVideo = useRef();
   const subVideo = useRef();
 
@@ -32,6 +30,8 @@ function MeetingRoom() {
     client = new Client(signal, config);
     signal.onopen = () => client.join("test room");
 
+
+    //Student
     if (!isPub) {
       client.ontrack = (track, stream) => {
         console.log("got track: ", track.id, "for stream: ", stream.id);
@@ -48,20 +48,30 @@ function MeetingRoom() {
     }
   }, []);
 
+
+  //Teacher
   const start = (event) => {
+    //Camera
     if (event) {
+      console.log("Sharing camera")
+
       LocalStream.getUserMedia({
         resolution: 'vga',
         audio: true,
         codec: "vp8"
-      }).then((media) => {
-      pubVideo.current.srcObject = media;
-      pubVideo.current.autoplay = true;
-      pubVideo.current.controls = true;
-      pubVideo.current.muted = true;
-      client.publish(media);
+      }).then((media) => 
+      {
+        pubVideo.current.srcObject = media;
+        pubVideo.current.autoplay = true;
+        pubVideo.current.controls = true;
+        pubVideo.current.muted = false;
+        client.publish(media);
       }).catch(console.error);
-    } else {
+    }
+    
+    //Share screen
+    else {
+      console.log("Sharing screen")
       LocalStream.getDisplayMedia({
         resolution: 'vga',
         video: true,
@@ -69,17 +79,32 @@ function MeetingRoom() {
         codec: "vp8"
       }).then((media) => {
       pubVideo.current.srcObject = media;
-      pubVideo.current.autoplay = true;
-      pubVideo.current.controls = true;
-      pubVideo.current.muted = true;
+      // pubVideo.current.autoplay = true;
+      // pubVideo.current.controls = true;
+      // pubVideo.current.muted = true;
+      pubVideo.current.audio = false;
       client.publish(media);
       }).catch(console.error);
+
+
+      //Share audio
+      LocalStream.getUserMedia({audio: true, video: false})
+      .then((media) => 
+      {
+        pubVideo.current.srcObject = media;
+        // pubVideo.current.muted = false;
+        // pubVideo.current.audio = true;
+        client.publish(media);
+      }
+      ).catch(console.error);
+
     }
   }
 
   return (
     <div className="flex flex-col h-screen relative">
     <header className="flex h-16 justify-center items-center text-xl bg-black text-white">
+
     <div>ion-sfu</div>
       {isPub ? (
         <div className="absolute top-2 right-5">
@@ -89,12 +114,15 @@ function MeetingRoom() {
       ) : null
     }
     </header>
-    {isPub ? (
-      <video id="pubVideo" className="bg-black" controls ref={pubVideo}></video>
-    ) : (
+    {isPub ?
+    (
+      <div id="pubVideo" className="bg-black" controls ref={pubVideo}></div>
+    ) : 
+    (
       <video id="subVideo" className="bg-black" controls ref={subVideo}></video>
     )}
     </div>
   );
 }
+
 export default MeetingRoom;

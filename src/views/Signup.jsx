@@ -45,17 +45,9 @@ function Signup() {
     }).then(res => res.json()).catch(err => console.log(err))
   }
 
-  // const data = api.json()
-
-  // if(res.status === "ok")
-  // {
-  //   alert('Sign up successful')
-  //   window.location.href = "signin-refactor"
-  // }
-  // else
-  // {
-  //   alert('Unable to sign you up chech you entered everyting.')
-  // }
+  function locate(){
+    window.location.href = "/Signin"
+  }
 
   return (
     <div className="signup179-container">
@@ -98,12 +90,15 @@ function Signup() {
 
           <Form.Control style={{width:"526px"}} className="signup179-image4" type="file" multiple onChange={onHandleChange('photo')}/>
           
-          <button className="signup179-button577" onClick={ () => api(formData).then(res => console.log("User saved")).then(res => window.location.href = "/Studenthomepage") }>
-            <span className="signup179-text05">Sign up</span>
-          </button>   
         </Form>
+
+        <button className="signup179-button577" onClick={() => api(formData).then(locate) }>
+          <span className="signup179-text05">Sign up</span>
+        </button>
+
         </div>
         <span className="signup179-text11">Image upload :</span>
+
       </div>
 
     </div>

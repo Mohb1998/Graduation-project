@@ -32,7 +32,7 @@ function Signin() {
 
     if (data.status === "ok") {
       alert('Sign in successful')
-      window.location.href = "Studenthomepage"
+      window.location.href = "/StudentHomePage"
     } else {
       alert('Please check your username and password')
     }
@@ -66,14 +66,6 @@ function Signin() {
     </Form>
 
   </div>
-
-  {/* <div className="signin271-navbar1721">
-    <span className="signin271-text05">SMR</span>
-    <span className="signin271-text06">Features</span>
-    <span className="signin271-text07">About us</span>
-    <span className="signin271-text08">Team</span>
-    <span className="signin271-text09">Contact us</span>
-  </div> */}
 
   <Navbar />
   

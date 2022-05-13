@@ -3,12 +3,11 @@ import {Routes,Route} from "react-router-dom";
 
 import Teacherpage from "./views/Teacher-homepage.jsx";
 import StudentHomePage from "./views/Student-homepage.jsx";
+import MeetingRoom from "./views/Meeting-Room.jsx";
 
-
-import Landingpage from "./views/Landing page"
-import Signin from "./views/signinrefactor.jsx"
-import Signup from "./views/signup-refactor.jsx"
-import MeetingRoom from "./views/meeting-Room.jsx";
+import Landingpage from "./views/Landing-page"
+import Signin from "./views/Signin.jsx"
+import Signup from "./views/Signup.jsx"
 
 function App()
 {

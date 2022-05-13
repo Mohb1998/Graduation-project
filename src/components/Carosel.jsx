@@ -2,7 +2,6 @@ import React from "react";
 import {
     Carousel
 } from 'react-bootstrap';
-// Check css style sheet for fixes
 
 function Carosels() {
     return (

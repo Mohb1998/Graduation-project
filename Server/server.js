@@ -103,12 +103,17 @@ const userData = (req, res) => {
       user.photo.contentType = file.photo.type
 
       user.save((err, user) => {
-        if (err) {
-          return res.status(400).json({
-            erro: "User not saved"
+        if (user) {
+          return res.json({
+            status: 'ok',
+            user: true
+          })
+        } else {
+          return res.json({
+            status: 'error',
+            user: false
           })
         }
-        return res.json(user)
 
       })
     }
