@@ -16,7 +16,9 @@ function MeetingRoom() {
       },
     ],
   };
+  
   // http://localhost:8000/?publish=true
+  //Check the url to see if the client is a publisher or a viewer
   const URL = new URLSearchParams(window.location.search).get("publish");
   console.log("url", URL);
   if (URL) {
@@ -25,6 +27,7 @@ function MeetingRoom() {
     isPub =false;
   }
 
+  //When the app mounts for the first time we will create a new connection to the server
   useEffect(() => {
     signal = new IonSFUJSONRPCSignal("ws://localhost:7000/ws");
     client = new Client(signal, config);
@@ -51,8 +54,10 @@ function MeetingRoom() {
 
   //Teacher
   const start = (event) => {
+    
     //Camera
     if (event) {
+
       console.log("Sharing camera")
 
       LocalStream.getUserMedia({
@@ -67,36 +72,34 @@ function MeetingRoom() {
         pubVideo.current.muted = false;
         client.publish(media);
       }).catch(console.error);
+
     }
     
     //Share screen
     else {
       console.log("Sharing screen")
-      LocalStream.getDisplayMedia({
+
+      const screen = LocalStream.getDisplayMedia({
         resolution: 'vga',
         video: true,
         audio: true,
         codec: "vp8"
       }).then((media) => {
       pubVideo.current.srcObject = media;
-      // pubVideo.current.autoplay = true;
-      // pubVideo.current.controls = true;
-      // pubVideo.current.muted = true;
-      pubVideo.current.audio = false;
+      pubVideo.current.autoplay = true;
+      pubVideo.current.controls = true;
+      pubVideo.current.muted = false;
+      pubVideo.current.audio = true;
       client.publish(media);
       }).catch(console.error);
 
-
       //Share audio
-      LocalStream.getUserMedia({audio: true, video: false})
-      .then((media) => 
-      {
-        pubVideo.current.srcObject = media;
-        // pubVideo.current.muted = false;
-        // pubVideo.current.audio = true;
-        client.publish(media);
-      }
-      ).catch(console.error);
+      //We need to add these 2 streams into one stream and publish it to the server
+
+      const sound = navigator.mediaDevices.getUserMedia({ audio : true, video : false })
+      .then(
+        screen.RTCPeerConnection.addTrack(sound)
+      )
 
     }
   }
