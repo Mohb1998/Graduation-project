@@ -2,12 +2,15 @@ import React, { useEffect, useRef } from 'react';
 import { Client, LocalStream } from 'ion-sdk-js';
 import { IonSFUJSONRPCSignal } from 'ion-sdk-js/lib/signal/json-rpc-impl';
 
-function MeetingRoom() {
+function MeetingRoom() 
+{
 
   const pubVideo = useRef();
   const subVideo = useRef();
 
   let isPub, client, signal;
+
+  let displayStream;
 
   const config = {
     iceServers: [
@@ -76,30 +79,33 @@ function MeetingRoom() {
     }
     
     //Share screen
-    else {
-      console.log("Sharing screen")
-
-      const screen = LocalStream.getDisplayMedia({
+    else
+    {
+      LocalStream.getDisplayMedia({
         resolution: 'vga',
         video: true,
         audio: true,
         codec: "vp8"
-      }).then((media) => {
-      pubVideo.current.srcObject = media;
+      })
+      .then((media) => {
+      displayStream = media;
+
+  navigator.mediaDevices.getUserMedia({ audio : true, video : false })
+    .then((stream) => {
+      var audioTracks = stream.getAudioTracks();
+      for (var i = 0; i < audioTracks.length; i++) {
+        displayStream.addTrack(audioTracks[i]);
+      }
+
+      pubVideo.current.srcObject = displayStream;
       pubVideo.current.autoplay = true;
       pubVideo.current.controls = true;
       pubVideo.current.muted = false;
       pubVideo.current.audio = true;
-      client.publish(media);
+      client.publish(displayStream);
+});
+
       }).catch(console.error);
-
-      //Share audio
-      //We need to create a new audio stream and then add it to the previous stream
-
-      const sound = navigator.mediaDevices.getUserMedia({ audio : true, video : false })
-      .then(
-        screen.RTCPeerConnection.addTrack(sound)
-      )
 
     }
   }
