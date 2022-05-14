@@ -94,7 +94,7 @@ function MeetingRoom() {
       }).catch(console.error);
 
       //Share audio
-      //We need to add these 2 streams into one stream and publish it to the server
+      //We need to create a new audio stream and then add it to the previous stream
 
       const sound = navigator.mediaDevices.getUserMedia({ audio : true, video : false })
       .then(
