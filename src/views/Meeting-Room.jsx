@@ -89,13 +89,13 @@ function MeetingRoom()
       })
       .then((media) => {
       displayStream = media;
-
-  navigator.mediaDevices.getUserMedia({ audio : true, video : false })
-    .then((stream) => {
-      var audioTracks = stream.getAudioTracks();
-      for (var i = 0; i < audioTracks.length; i++) {
-        displayStream.addTrack(audioTracks[i]);
-      }
+        
+      navigator.mediaDevices.getUserMedia({ audio : true, video : false })
+        .then((stream) => {
+          var audioTracks = stream.getAudioTracks();
+          for (var i = 0; i < audioTracks.length; i++) {
+            displayStream.addTrack(audioTracks[i]);
+          }
 
       pubVideo.current.srcObject = displayStream;
       pubVideo.current.autoplay = true;
