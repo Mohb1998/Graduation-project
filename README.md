@@ -13,6 +13,23 @@ In the project directory, you can run:
 
 To make sure that all the needed dependecies have been added
 
-## To run the web application
+## To run the front end
 you must be in the Senior Projects directory and then write the command 
 ### `npm start`
+
+## To run the back end 
+you must be in the Server directory and write the command
+### `node server.js`
+
+## Finally you will have to install ion-sfu to manage the video conference
+To install and run the ion-sfu first you will have to clone this repo :
+git clone https://github.com/pion/ion-sfu.git
+
+after that you will run the server through this command 
+
+Linux and mac : go build ./cmd/signal/json-rpc/main.go && ./main -c config.toml
+
+Windows : go build ./cmd/signal/json-rpc/main.go && main -c config.toml
+
+Please note that if you want to be able to use the database you will have to get your own key and put it inside the server.js file in ordere 
+to see the full potential of the project.
