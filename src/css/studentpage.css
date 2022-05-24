@@ -1,0 +1,125 @@
+.studentpage462-container {
+  min-height: 100vh;
+}
+.studentpage462-studentpage462 {
+  width: 1920px;
+  height: 1080px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  max-width: 1920px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  border-color: transparent;
+  background-color: rgba(255, 255, 255, 1);
+}
+.studentpage462-navbar463 {
+  top: 0px;
+  left: 0px;
+  width: 1920px;
+  height: 60px;
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  background-color: rgba(88, 109, 182, 0.7400000095367432);
+}
+.studentpage462-text {
+  top: 9px;
+  left: 30px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 36px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.studentpage462-text1 {
+  top: 15px;
+  left: 162px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.studentpage462-text2 {
+  top: 15px;
+  left: 323px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.studentpage462-text3 {
+  top: 15px;
+  left: 485px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.studentpage462-text4 {
+  top: 15px;
+  left: 566px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.studentpage462-svg {
+  top: 847px;
+  left: -80px;
+  width: 300;
+  height: 300;
+  position: absolute;
+}
+.studentpage462-image {
+  top: 167px;
+  left: 105px;
+  width: 1710px;
+  height: 745px;
+  position: absolute;
+  object-fit: cover;
+  border-color: transparent;
+  background-color: rgba(0, 0, 0, 1);
+}

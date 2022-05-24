@@ -2,6 +2,9 @@ import React, { useEffect, useRef } from 'react';
 import { Client, LocalStream } from 'ion-sdk-js';
 import { IonSFUJSONRPCSignal } from 'ion-sdk-js/lib/signal/json-rpc-impl';
 
+import  '../css/teacherpage.css'
+import  '../css/studentpage.css'
+
 function MeetingRoom() 
 {
 
@@ -111,25 +114,85 @@ function MeetingRoom()
   }
 
   return (
-    <div className="flex flex-col h-screen relative">
-    <header className="flex h-16 justify-center items-center text-xl bg-black text-white">
+    <div>
+        {isPub ?
+        (
+          <div>
 
-    <div>ion-sfu</div>
-      {isPub ? (
-        <div className="absolute top-2 right-5">
-        <button id="bnt_pubcam" className="bg-blue-500 px-4 py-2 text-white rounded-lg mr-5" onClick={() => start(true)}>Publish Camera</button>
-        <button id="bnt_pubscreen" className="bg-green-500 px-4 py-2 text-white rounded-lg" onClick={() => start(false)}>Publish Screen</button>
-      </div>
-      ) : null
-    }
-    </header>
-    {isPub ?
-    (
-      <div id="pubVideo" className="bg-black" controls ref={pubVideo}></div>
-    ) : 
-    (
-      <video id="subVideo" className="bg-black" controls ref={subVideo}></video>
-    )}
+            <div id="pubVideo" className="bg-black" controls ref={pubVideo}></div>
+
+                <div className="teacherpage4611-teacherpage4611">
+                  <div className="teacherpage4611-navbar4612">
+                    <span className="teacherpage4611-text">SMR</span>
+                    <span className="teacherpage4611-text01">Features</span>
+                    <span className="teacherpage4611-text02">About us</span>
+                    <span className="teacherpage4611-text03">Team</span>
+                    <span className="teacherpage4611-text04">Contact us</span>
+                  </div>
+                  <img
+                    alt="Studentname4619"
+                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMzQ0JyBoZWlnaHQ9Jzg3MScgdmlld0JveD0nMCAwIDM0NCA4NzEnIGZpbGw9J25vbmUnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+CjxyZWN0IG9wYWNpdHk9JzAuMycgd2lkdGg9JzM0NCcgaGVpZ2h0PSc4NzEnIGZpbGw9JyM2NDlFRDMnLz4KPC9zdmc+Cg=="
+                    className="teacherpage4611-image"
+                  />
+                  <span className="teacherpage4611-text05">Student list</span>
+                  <img
+                    alt="Rectangle144621"
+                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMTM2NScgaGVpZ2h0PSczOCcgdmlld0JveD0nMCAwIDEzNjUgMzgnIGZpbGw9J25vbmUnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+CjxyZWN0IHdpZHRoPScxMzY1JyBoZWlnaHQ9JzM4JyBmaWxsPScjRDlEOUQ5Jy8+Cjwvc3ZnPgo="
+                    className="teacherpage4611-image1"
+                  />
+                  <img
+                    alt="Rectangle154623"
+                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nOTc0JyBoZWlnaHQ9JzM4JyB2aWV3Qm94PScwIDAgOTc0IDM4JyBmaWxsPSdub25lJyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPgo8cmVjdCB3aWR0aD0nOTc0JyBoZWlnaHQ9JzM4JyBmaWxsPScjNjQ5RUQzJy8+Cjwvc3ZnPgo="
+                    className="teacherpage4611-image2"
+                  />
+                  <span className="teacherpage4611-text06">Studen't concentration</span>
+                  <span className="teacherpage4611-text07">80%</span>
+                  <span className="teacherpage4611-text08">
+                    <span>Mohb Khaled</span>
+                    <br></br>
+                    <span>Mira Emad</span>
+                    <br></br>
+                    <span>Sherif Tarek</span>
+                    <br></br>
+                    <span>Seif Koreitam</span>
+                    <br></br>
+                    <span>Rowan</span>
+                  </span>
+
+                  <div className="teacherpage4611-group14629">
+                  <button id="bnt_pubcam" className="teacherpage4611-text18" onClick={() => start(true)}>Publish Camera</button>
+                  </div>
+
+                  <div className="teacherpage4611-group24631">
+                  <button id="bnt_pubscreen" className="teacherpage4611-text19" onClick={() => start(false)}>Publish Screen</button>
+                  </div>
+
+
+                </div>
+          </div>
+        )
+        
+        :( 
+          <div>
+              <div className="studentpage462-container">
+                  <div className="studentpage462-studentpage462">
+                      <div className="studentpage462-navbar463">
+                          <span className="studentpage462-text">SMR</span>
+                          <span className="studentpage462-text1">Features</span>
+                          <span className="studentpage462-text2">About us</span>
+                          <span className="studentpage462-text3">Team</span>
+                          <span className="studentpage462-text4">Contact us</span>
+                      </div>
+                      <img alt="Ellipse54634"
+                          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjIwJyBoZWlnaHQ9JzIzMycgdmlld0JveD0nMCAwIDIyMCAyMzMnIGZpbGw9J25vbmUnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+CjxjaXJjbGUgY3g9JzcwJyBjeT0nMTUwJyByPScxNTAnIGZpbGw9JyMzOTZERjEnIGZpbGwtb3BhY2l0eT0nMC4yNScvPgo8L3N2Zz4K"
+                          className="studentpage462-svg" />
+
+                  <video id="subVideo" className="studentpage462-image" controls ref={subVideo}></video>
+                  </div>
+              </div>
+          </div>
+        )}
+
     </div>
   );
 }
