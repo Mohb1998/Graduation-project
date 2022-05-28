@@ -4,8 +4,10 @@ import styles from '../css/landingpage.module.css'
 
 function AboutUs(props) {
   return (
-<div>
-           <div className={styles['aboutus62714']}>
+
+    <div>
+
+        <div id="Aboutus" className={styles['aboutus62714']}>
           <img
             alt="Ellipse42715"
             src="/images/ellipse42715-5ojk.svg"
@@ -22,6 +24,7 @@ function AboutUs(props) {
             className={styles['image03']}
           />
         </div>
+
         <div className={styles['aboutus72718']}>
           <img
             alt="Ellipse42719"
@@ -46,6 +49,7 @@ function AboutUs(props) {
             className={styles['image04']}
           />
         </div>
+
         <div className={styles['aboutus82722']}>
           <img
             alt="Ellipse42723"
@@ -63,6 +67,7 @@ function AboutUs(props) {
             className={styles['image05']}
           />
         </div>
+
         <div className={styles['aboutus92726']}>
           <img
             alt="Ellipse42727"
@@ -80,6 +85,7 @@ function AboutUs(props) {
             className={styles['image06']}
           />
         </div>
+
         <div className={styles['aboutus102730']}>
           <img
             alt="Ellipse42731"
@@ -97,10 +103,13 @@ function AboutUs(props) {
             className={styles['image07']}
           />
         </div>
+
         <span className={styles['text27']}>
           AAST very best working towards a better learning experience
         </span>
-       </div>
+
+    </div>
+          
   )
 }
 

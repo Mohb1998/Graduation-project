@@ -5,7 +5,8 @@ import styles from '../css/landingpage.module.css'
 function Features(props) {
   return (
       <div>
-             <div className={styles['features274']}>
+
+        <div className={styles['features274']}>
           <img
             alt="feature2275"
             src="/images/feature2275-45m-600w.png"
@@ -43,6 +44,7 @@ function Features(props) {
             able to achieve a classroom feeling
           </span>
         </div>
+        
     </div>
   )
 }

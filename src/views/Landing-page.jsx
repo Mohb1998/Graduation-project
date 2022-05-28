@@ -3,6 +3,7 @@ import React from 'react'
 import {Link} from "react-router-dom"
 import styles from '../css/landingpage.module.css'
 
+
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ContactUs from '../components/ContactUs'
@@ -14,15 +15,14 @@ const Landingpage = (props) => {
 
     <div>
       <div className={styles['landingpage12']}>
+
+        <Navbar />
         <Footer />
         <ContactUs />
         <AboutUs />
+        <Features />
 
-        <div id="Features">
-          <Features />
-        </div>
-
-        <span className={styles['text31']}>
+        <span id="Features" className={styles['text31']}>
           Why Choose SMR for your next learning experience ?
         </span>
         <img
@@ -35,7 +35,7 @@ const Landingpage = (props) => {
         </span>
         <span className={styles['text33']}>Smart monitoring redesigned</span>
         
-        <Link to ="/Signup">
+        <Link to ="/PreSignup">
           <button className={styles['button120']}>
             <span className={styles['text34']}>Sign up</span>
           </button>
@@ -46,9 +46,6 @@ const Landingpage = (props) => {
             <span className={styles['text35']}>Sign in</span>
           </button>
         </Link>
-
-        
-        <Navbar />
         
         <div className={styles['decorations316']}>
           <img

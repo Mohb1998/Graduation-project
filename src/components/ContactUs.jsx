@@ -6,7 +6,7 @@ import styles from '../css/landingpage.module.css'
 
 function ContactUs(props) {
   return (
-      <div className={styles['contactform2738']}>
+      <div id="Contactus" className={styles['contactform2738']}>
         <span className={styles['text03']}>Contact us</span>
         <span className={styles['text04']}>Email :</span>
         <span className={styles['text05']}>Name :</span>

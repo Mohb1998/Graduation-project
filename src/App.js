@@ -6,8 +6,12 @@ import StudentHomePage from "./views/Student-homepage.jsx";
 import MeetingRoom from "./views/Meeting-Room.jsx";
 
 import Landingpage from "./views/Landing-page"
+
 import Signin from "./views/Signin.jsx"
-import Signup from "./views/Signup.jsx"
+import SignupStudent from "./views/Signup-Student.jsx"
+import SignupTeacher from "./views/Signup-Teacher.jsx"
+
+import PreSignup from "./views/PreSignup.jsx"
 
 function App()
 {
@@ -23,7 +27,15 @@ function App()
         </Routes>
 
         <Routes>
-            <Route exact path='/Signup' element={<Signup/>} />
+            <Route exact path='/PreSignup' element={<PreSignup/>} />
+        </Routes>
+
+        <Routes>
+            <Route exact path='/SignupStudent' element={<SignupStudent/>} />
+        </Routes>
+
+        <Routes>
+            <Route exact path='/SignupTeacher' element={<SignupTeacher/>} />
         </Routes>
 
         <Routes>

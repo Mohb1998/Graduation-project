@@ -3,8 +3,6 @@ import React from "react";
 import styles from '../css/landingpage.module.css'
 import {Link} from "react-router-dom"
 
-
-
 function Teacherpage() {
   return (
         <Link to ="/MeetingRoom/?publish=true">

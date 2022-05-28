@@ -61,6 +61,27 @@ userSchema.plugin(findOrCreate)
 const User = mongoose.model("User", userSchema)
 
 
+const teacherSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
+}, {
+  collection: 'Teacher'
+})
+userSchema.plugin(findOrCreate)
+const Teacher = mongoose.model("Teacher", teacherSchema)
+
+
 /*
  * The function takes in a request and a response object. 
  * It then uses the formidable module to parse the request. 
@@ -121,6 +142,14 @@ const userData = (req, res) => {
 }
 app.post("/Signup", userData)
 
+app.post("/SignupTecher", function(req,res){
+   const teacher = new UserModel(req.body)
+    teacher.save((error, savedTeacher)=>{
+        if(error) throw error
+        res.json(savedTeacher)
+    })
+})
+
 
 /* This is a post request that is used to sign in the user. It takes in the email and password from the
 request body and checks if the user exists in the database. If the user exists, it returns a status
@@ -144,6 +173,8 @@ app.post("/Signin", async (req, res) => {
       user: false
     })
   }
+
+
 })
 
 //This will be the function used to retrieve the data from the database and access the images

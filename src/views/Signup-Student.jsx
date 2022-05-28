@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 
 import Form from 'react-bootstrap/Form'
 
-import '../css/signup.css'
+import '../css/signup-student.css'
 
-import Navbar from '../components/Navbar'
+import Navbar2 from '../components/Navbar2'
+import Footer2 from '../components/Footer2'
+
 
 function Signup() {
 
@@ -54,7 +56,8 @@ function Signup() {
 
       <div className="signup179-signup179">
 
-        <Navbar />
+        <Navbar2 />
+        <Footer2 />
         <img
           alt="Ellipse51717"
           src="/images/ellipse51717-6wza.svg"

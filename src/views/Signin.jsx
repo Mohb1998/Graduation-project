@@ -5,7 +5,8 @@ import {
 import Form from 'react-bootstrap/Form'
 
 import GoogleButton from "../components/GoogleButton"
-import Navbar from '../components/Navbar'
+import Navbar2 from '../components/Navbar2'
+import Footer2 from '../components/Footer2'
 
 import '../css/signin.css'
 
@@ -67,7 +68,8 @@ function Signin() {
 
   </div>
 
-  <Navbar />
+  <Navbar2 />
+  <Footer2 />
   
   <img
     alt="Ellipse3546"
@@ -86,13 +88,13 @@ function Signin() {
   />
 </div>
 
-  <div class="col-sm-4">
+  {/* <div class="col-sm-4">
     <div class="card">
       <div class="card-body">
         <GoogleButton />
       </div>
     </div>
-  </div>
+  </div> */}
 
 </div>
   )

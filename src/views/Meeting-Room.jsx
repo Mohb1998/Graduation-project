@@ -5,6 +5,9 @@ import { IonSFUJSONRPCSignal } from 'ion-sdk-js/lib/signal/json-rpc-impl';
 import  '../css/teacherpage.css'
 import  '../css/studentpage.css'
 
+import Navbar2 from '../components/Navbar2'
+import Footer2 from '../components/Footer2'
+
 function MeetingRoom() 
 {
 
@@ -121,14 +124,8 @@ function MeetingRoom()
 
             <div id="pubVideo" className="bg-black" controls ref={pubVideo}></div>
 
-                <div className="teacherpage4611-teacherpage4611">
-                  <div className="teacherpage4611-navbar4612">
-                    <span className="teacherpage4611-text">SMR</span>
-                    <span className="teacherpage4611-text01">Features</span>
-                    <span className="teacherpage4611-text02">About us</span>
-                    <span className="teacherpage4611-text03">Team</span>
-                    <span className="teacherpage4611-text04">Contact us</span>
-                  </div>
+                <div className="teacherpage4611-teacherpage4611">\
+                  <Navbar2 />                   
                   <img
                     alt="Studentname4619"
                     src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMzQ0JyBoZWlnaHQ9Jzg3MScgdmlld0JveD0nMCAwIDM0NCA4NzEnIGZpbGw9J25vbmUnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+CjxyZWN0IG9wYWNpdHk9JzAuMycgd2lkdGg9JzM0NCcgaGVpZ2h0PSc4NzEnIGZpbGw9JyM2NDlFRDMnLz4KPC9zdmc+Cg=="
@@ -166,8 +163,6 @@ function MeetingRoom()
                   <div className="teacherpage4611-group24631">
                   <button id="bnt_pubscreen" className="teacherpage4611-text19" onClick={() => start(false)}>Publish Screen</button>
                   </div>
-
-
                 </div>
           </div>
         )
@@ -176,18 +171,12 @@ function MeetingRoom()
           <div>
               <div className="studentpage462-container">
                   <div className="studentpage462-studentpage462">
-                      <div className="studentpage462-navbar463">
-                          <span className="studentpage462-text">SMR</span>
-                          <span className="studentpage462-text1">Features</span>
-                          <span className="studentpage462-text2">About us</span>
-                          <span className="studentpage462-text3">Team</span>
-                          <span className="studentpage462-text4">Contact us</span>
-                      </div>
+                      <Navbar2 />
                       <img alt="Ellipse54634"
                           src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjIwJyBoZWlnaHQ9JzIzMycgdmlld0JveD0nMCAwIDIyMCAyMzMnIGZpbGw9J25vbmUnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+CjxjaXJjbGUgY3g9JzcwJyBjeT0nMTUwJyByPScxNTAnIGZpbGw9JyMzOTZERjEnIGZpbGwtb3BhY2l0eT0nMC4yNScvPgo8L3N2Zz4K"
                           className="studentpage462-svg" />
 
-                  <video id="subVideo" className="studentpage462-image" controls ref={subVideo}></video>
+                      <video id="subVideo" className="studentpage462-image" controls ref={subVideo}></video>
                   </div>
               </div>
           </div>
