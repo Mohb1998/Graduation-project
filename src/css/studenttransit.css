@@ -1,0 +1,270 @@
+.studenttransit1482-container {
+  min-height: 100vh;
+}
+.studenttransit1482-studenttransit1482 {
+  width: 1920px;
+  height: 1080px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  max-width: 1920px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  border-color: transparent;
+  background-color: rgba(255, 255, 255, 1);
+}
+.studenttransit1482-svg {
+  top: 685px;
+  left: 1510px;
+  width: 300;
+  height: 300;
+  position: absolute;
+}
+.studenttransit1482-svg1 {
+  top: 122px;
+  left: 152px;
+  width: 300;
+  height: 300;
+  position: absolute;
+}
+.studenttransit1482-image {
+  top: 212px;
+  left: 255px;
+  width: 1409px;
+  height: 655px;
+  position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: transparent;
+  background-color: rgba(179, 206, 246, 0.5);
+}
+.studenttransit1482-text {
+  top: 173px;
+  left: 838px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 32px;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.studenttransit1482-navbar14812 {
+  top: 0px;
+  left: 0px;
+  width: 1920px;
+  height: 60px;
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  background-color: rgba(88, 109, 182, 0.7400000095367432);
+}
+.studenttransit1482-text01 {
+  top: 9px;
+  left: 30px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 36px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.studenttransit1482-text02 {
+  top: 15px;
+  left: 162px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.studenttransit1482-text03 {
+  top: 15px;
+  left: 323px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.studenttransit1482-text04 {
+  top: 15px;
+  left: 485px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.studenttransit1482-text05 {
+  top: 15px;
+  left: 566px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.studenttransit1482-footer14826 {
+  top: 1021px;
+  left: 0px;
+  width: 1920px;
+  height: 59px;
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  background-color: rgba(88, 109, 183, 0.7599999904632568);
+}
+.studenttransit1482-text06 {
+  top: 0px;
+  left: 18px;
+  color: rgba(255, 255, 255, 1);
+  width: 180px;
+  height: auto;
+  position: absolute;
+  font-size: 48px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.studenttransit1482-text07 {
+  top: 10px;
+  left: 1549px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 32px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.studenttransit1482-text08 {
+  top: 10px;
+  left: 1777px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 32px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.studenttransit1482-svg2 {
+  top: 23px;
+  left: 1748px;
+  width: 24;
+  height: 18;
+  position: absolute;
+}
+.studenttransit1482-svg3 {
+  top: 21px;
+  left: 1510px;
+  width: 24;
+  height: 20;
+  position: absolute;
+}
+.studenttransit1482-image1 {
+  top: 467px;
+  left: 758px;
+  width: 404px;
+  height: 73px;
+  position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: transparent;
+  background-color: rgba(100, 158, 211, 1);
+}
+.studenttransit1482-text09 {
+  top: 489px;
+  left: 764px;
+  color: rgba(255, 255, 255, 1);
+  width: 391px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.studenttransit1482-text10 {
+  top: 380px;
+  left: 714px;
+  color: rgba(0, 0, 0, 1);
+  width: 504px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}

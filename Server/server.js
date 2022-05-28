@@ -142,14 +142,46 @@ const userData = (req, res) => {
 }
 app.post("/Signup", userData)
 
-app.post("/SignupTecher", function(req,res){
-   const teacher = new UserModel(req.body)
-    teacher.save((error, savedTeacher)=>{
-        if(error) throw error
-        res.json(savedTeacher)
-    })
-})
 
+const teacherData = (req, res) => {
+  const form = new formidable.IncomingForm({
+    multiples: true
+  });
+
+  form.parse(req, (err, fields, file) => {
+    if (fields) {
+      const {
+        name,
+        email,
+        password,
+      } = fields
+
+      if (!name || !email || !password) {
+        return res.status(400).json({
+          error: "Fill all the fields"
+        })
+      }
+    }
+
+      const teacher = new Teacher(fields)
+      teacher.save((err, teacher) => {
+        if (teacher) {
+          return res.json({
+            status: 'ok',
+            user: true
+          })
+        } else {
+          return res.json({
+            status: 'error',
+            user: false
+          })
+        }
+
+      })
+    
+  })
+}
+app.post("/SignupTeacher", teacherData)
 
 /* This is a post request that is used to sign in the user. It takes in the email and password from the
 request body and checks if the user exists in the database. If the user exists, it returns a status
@@ -162,18 +194,32 @@ app.post("/Signin", async (req, res) => {
     password: req.body.password
   })
 
+  const teacher = await Teacher.findOne({
+    email: req.body.email,
+    password: req.body.password
+  })
+
+  console.log(teacher)
+
   if (user) {
     return res.json({
       status: 'ok',
-      user: true
-    })
-  } else {
-    return res.json({
-      status: 'error',
-      user: false
+      student : true
     })
   }
 
+  else if(teacher){
+    return res.json({
+      status: 'oki',
+      teacher : true
+    })
+  }
+
+   else {
+    return res.json({
+      status: 'error'
+    })
+  }
 
 })
 

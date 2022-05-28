@@ -30,13 +30,21 @@ function Signin() {
     })
 
     const data = await response.json()
+    console.log(data)
 
     if (data.status === "ok") {
       alert('Sign in successful')
       window.location.href = "/StudentHomePage"
-    } else {
+    }
+    else if(data.status === "oki")
+    {
+      alert('Sign in successful')
+      window.location.href = "/Teacherpage"
+    }
+     else {
       alert('Please check your username and password')
     }
+
   }
 
 

@@ -30,6 +30,7 @@ function Signup() {
     success
   } = values
 
+/* A function that is used to handle the change of the input fields. */
   const onHandleChange = name => event => {
     const value = (name === 'photo') ? event.target.files[0] : event.target.value;
     formData.set(name, value);
