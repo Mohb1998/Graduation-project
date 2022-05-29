@@ -2,8 +2,6 @@ import React from "react";
 import {Link} from "react-router-dom"
 import styles from '../css/landingpage.module.css'
 
-import AnchorLink from "react-anchor-link-smooth-scroll";
-
 
 function Navbar2(props)
 {
@@ -11,9 +9,9 @@ function Navbar2(props)
         <div className={styles['navbar226']}>
 
             <Link to ='/'>
-                <a className={styles['text36']}>
+                <button className={styles['text36']}>
                     SMR
-                </a>
+                </button>
             </Link>
 
             <Link to ="/">

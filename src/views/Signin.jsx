@@ -4,7 +4,7 @@ import {
 } from "react"
 import Form from 'react-bootstrap/Form'
 
-import GoogleButton from "../components/GoogleButton"
+// import GoogleButton from "../components/GoogleButton"
 import Navbar2 from '../components/Navbar2'
 import Footer2 from '../components/Footer2'
 

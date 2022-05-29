@@ -1,5 +1,4 @@
 import React from "react";
-import {Link} from "react-router-dom"
 import styles from '../css/landingpage.module.css'
 
 import AnchorLink from "react-anchor-link-smooth-scroll";
@@ -10,7 +9,11 @@ function Navbar(props)
     return(
         <div className={styles['navbar226']}>
 
-            <a className={styles['text36']}>SMR</a>
+            <AnchorLink href='/'>
+                <button className={styles['text36']}>
+                    SMR
+                </button>
+            </AnchorLink>
 
             <AnchorLink href='#Features'>
                 <button className={styles['text37']}>

@@ -10,7 +10,7 @@ function Footer() {
         <div className="signin271-footer1389">
 
             <span className="signin271-text009">
-                SMR
+                SMR Copyright ⓒ {year} AAST Monitoring Project
             </span>
             <span className="signin271-text10">Facebook</span>
             <span className="signin271-text11">Twitter</span>

@@ -6,7 +6,6 @@ import  '../css/teacherpage.css'
 import  '../css/studentpage.css'
 
 import Navbar2 from '../components/Navbar2'
-import Footer2 from '../components/Footer2'
 
 function MeetingRoom() 
 {
