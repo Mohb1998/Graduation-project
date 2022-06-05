@@ -1,5 +1,4 @@
 import React from "react";
-import Form from 'react-bootstrap/Form'
 import emailjs from "emailjs-com"
 
 import styles from '../css/landingpage.module.css'
