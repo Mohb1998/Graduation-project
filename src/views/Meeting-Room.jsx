@@ -1,3 +1,4 @@
+// go build ./cmd/signal/json-rpc/main.go && ./main -c config.toml
 import React, { useEffect, useRef } from 'react';
 import { Client, LocalStream } from 'ion-sdk-js';
 import { IonSFUJSONRPCSignal } from 'ion-sdk-js/lib/signal/json-rpc-impl';
