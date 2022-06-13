@@ -30,7 +30,6 @@
     "handsfree": "^8.5.1",
     "ion-sdk-js": "^1.8.2",
     "mongoose": "^6.3.5",
-    "mongoose-findorcreate": "^3.0.0",
     "passport": "^0.5.0",
     "passport-google-oauth20": "^2.0.0",
     "peer": "^0.6.1",
