@@ -6,7 +6,7 @@ const formidable = require("formidable")
 const cors = require("cors");
 
 const mongoose = require("mongoose");
-const findOrCreate = require("mongoose-findorcreate");
+// const findOrCreate = require("mongoose-findorcreate");
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({
@@ -55,7 +55,7 @@ const userSchema = new mongoose.Schema({
 }, {
   collection: 'Student'
 })
-userSchema.plugin(findOrCreate)
+// userSchema.plugin(findOrCreate)
 const User = mongoose.model("User", userSchema)
 
 
@@ -76,7 +76,7 @@ const teacherSchema = new mongoose.Schema({
 }, {
   collection: 'Teacher'
 })
-userSchema.plugin(findOrCreate)
+// userSchema.plugin(findOrCreate)
 const Teacher = mongoose.model("Teacher", teacherSchema)
 
 
