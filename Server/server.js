@@ -1,8 +1,6 @@
 const express = require("express");
 const app = express();
 
-
-/* A node.js module for parsing form data, especially file uploads. */
 const formidable = require("formidable")
 
 const cors = require("cors");
@@ -24,8 +22,8 @@ app.use(express.json())
 var fs = require('fs');
 
 
+
 // mongodb://localhost:27017   
-//Connecting to the online database to store and retrieve data
 mongoose.connect(process.env.MONGODB, {
     useNewUrlParser: true
   })
@@ -82,15 +80,6 @@ userSchema.plugin(findOrCreate)
 const Teacher = mongoose.model("Teacher", teacherSchema)
 
 
-/*
- * The function takes in a request and a response object. 
- * It then uses the formidable module to parse the request. 
- * The formidable module parses the request and returns an object with the fields and files. 
- * If the fields exist, it checks if the name, email, password, and photo fields are filled out. 
- * If they are, it creates a new user with the fields and saves it to the database. 
- * If the photo field exists, it reads the file and saves it to the database. 
- * If the fields don't exist, it returns an error
- */
 const userData = (req, res) => {
   const form = new formidable.IncomingForm({
     multiples: true
@@ -183,10 +172,7 @@ const teacherData = (req, res) => {
 }
 app.post("/SignupTeacher", teacherData)
 
-/* This is a post request that is used to sign in the user. It takes in the email and password from the
-request body and checks if the user exists in the database. If the user exists, it returns a status
-of ok and a user of true. If the user doesn't exist, it returns a status of error and a user of
-false. */
+
 app.post("/Signin", async (req, res) => {
 
   const user = await User.findOne({

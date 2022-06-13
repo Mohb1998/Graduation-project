@@ -15,7 +15,6 @@ function MeetingRoom()
   const subVideo = useRef();
 
   let isPub, client, signal;
-
   let displayStream;
 
   const config = {
@@ -33,7 +32,7 @@ function MeetingRoom()
   if (URL) {
     isPub = true;
   } else {
-    isPub =false;
+    isPub = false;
   }
 
   //When the app mounts for the first time we will create a new connection to the server
@@ -66,9 +65,6 @@ function MeetingRoom()
     
     //Camera
     if (event) {
-
-      console.log("Sharing camera")
-
       LocalStream.getUserMedia({
         resolution: 'vga',
         audio: true,
@@ -118,6 +114,7 @@ function MeetingRoom()
 
   return (
     <div>
+
         {isPub ?
         (
           <div>
