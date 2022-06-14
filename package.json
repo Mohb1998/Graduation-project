@@ -45,7 +45,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "node Server/server.js",
     "build": "cd src && npm run build",
     "install-client": "cd src && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
