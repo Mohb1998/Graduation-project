@@ -18,37 +18,37 @@ function App()
     return(
         <div>
 
-        <Routes>
-            <Route exact path='/' element={<Landingpage/>} />
-        </Routes>
+            <Routes>
+                <Route exact path='/' element={<Landingpage/>} />
+            </Routes>
 
-        <Routes>
-            <Route exact path='/Signin' element={<Signin/>} />
-        </Routes>
+            <Routes>
+                <Route exact path='/Signin' element={<Signin/>} />
+            </Routes>
 
-        <Routes>
-            <Route exact path='/PreSignup' element={<PreSignup/>} />
-        </Routes>
+            <Routes>
+                <Route exact path='/PreSignup' element={<PreSignup/>} />
+            </Routes>
 
-        <Routes>
-            <Route exact path='/SignupStudent' element={<SignupStudent/>} />
-        </Routes>
+            <Routes>
+                <Route exact path='/SignupStudent' element={<SignupStudent/>} />
+            </Routes>
 
-        <Routes>
-            <Route exact path='/SignupTeacher' element={<SignupTeacher/>} />
-        </Routes>
+            <Routes>
+                <Route exact path='/SignupTeacher' element={<SignupTeacher/>} />
+            </Routes>
 
-        <Routes>
-            <Route exact path='/StudentHomePage' element={<StudentHomePage/>} />
-        </Routes>     
+            <Routes>
+                <Route exact path='/StudentHomePage' element={<StudentHomePage/>} />
+            </Routes>     
 
-        <Routes>
-            <Route exact path='/Teacherpage' element={<Teacherpage/>} />
-        </Routes>
+            <Routes>
+                <Route exact path='/Teacherpage' element={<Teacherpage/>} />
+            </Routes>
 
-        <Routes>
-            <Route exact path='/MeetingRoom' element={<MeetingRoom/>} />
-        </Routes>
+            <Routes>
+                <Route exact path='/MeetingRoom' element={<MeetingRoom/>} />
+            </Routes>
 
         </div>
     )

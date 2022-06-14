@@ -1,5 +1,7 @@
 const express = require("express");
-const app = express();
+var app = express();
+// app = express().use(express.static(__dirname + '/'))
+
 
 const formidable = require("formidable")
 
@@ -24,7 +26,7 @@ var fs = require('fs');
 
 
 // mongodb://localhost:27017   
-mongoose.connect(process.env.MONGODB, {
+mongoose.connect("mongodb+srv://admin-mohb:23121998@cluster0.tr2mg.mongodb.net/Users-database", {
     useNewUrlParser: true
   })
   .then(res => {
@@ -224,15 +226,15 @@ app.post("/Signin", async (req, res) => {
 //   }
 // })
 
-if(process.env.NODE_ENV === "production")
-{
-  app.use(express.static("../build"))
+// if(process.env.NODE_ENV === "production")
+// {
+//   app.use(express.static("client/build"))
 
-  const path = require('path');
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  });
-}
+//   const path = require('path');
+//   app.get('*', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+//   });
+// }
 
 /* This is a port that is used to listen to the server. */
 const PORT = process.env.PORT || 5000
