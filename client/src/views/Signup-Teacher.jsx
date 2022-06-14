@@ -35,7 +35,7 @@ const SignupTeacher = (props) => {
   }
 
   const api = (data) => {
-    return fetch("http://localhost:5000/SignupTeacher", {
+    return fetch("/SignupTeacher", {
       method: "POST",
       body: data,
       multiples: true

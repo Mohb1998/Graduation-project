@@ -41,7 +41,7 @@ function Signup() {
   }
 
   const api = (data) => {
-    return fetch("http://localhost:5000/Signup", {
+    return fetch("/Signup", {
       method: "POST",
       body: data,
       multiples: true

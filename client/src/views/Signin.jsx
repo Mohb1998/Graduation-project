@@ -18,7 +18,7 @@ function Signin() {
   async function handleRegister(event) {
     event.preventDefault()
 
-    const response = await fetch("http://localhost:5000/Signin", {
+    const response = await fetch("/Signin", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
