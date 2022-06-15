@@ -30,6 +30,7 @@
     "handsfree": "^8.5.1",
     "ion-sdk-js": "^1.8.2",
     "mongoose": "^6.3.5",
+    "nodemon": "^2.0.16",
     "passport": "^0.5.0",
     "passport-google-oauth20": "^2.0.0",
     "peer": "^0.6.1",
@@ -46,7 +47,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client && go build ./cmd/signal/json-rpc/main.go && ./main -c config.toml --prefix ion-sfu",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
