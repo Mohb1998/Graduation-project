@@ -92,20 +92,29 @@ const userData = (req, res) => {
         name,
         email,
         password,
+        password2,
         photo
       } = fields
 
       if (!name || !email || !password) {
-        return res.status(400).json({
-          error: "Fill all the fields"
+        return res.json({
+          status:"Emptyfields"
         })
       }
+
+      if (password != password2)
+      {
+        return res.json({
+          status: "Passwords missmatch"
+        })
+      }
+
     }
 
     if (file.photo) {
       if (file.photo.size > 4000000) {
-        return res.status(400).json({
-          error: "Image is too large"
+        return res.json({
+          status: "Image is too large"
         })
       }
 
@@ -144,11 +153,19 @@ const teacherData = (req, res) => {
         name,
         email,
         password,
+        password2
       } = fields
 
       if (!name || !email || !password) {
-        return res.status(400).json({
-          error: "Fill all the fields"
+        return res.json({
+          status: "Emptyfields"
+        })
+      }
+
+      if (password != password2)
+      {
+        return res.json({
+          status: "Passwords missmatch"
         })
       }
     }

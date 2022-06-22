@@ -14,6 +14,7 @@ function Signup() {
     name: '',
     email: '',
     password: '',
+    password2: '',
     photo: '',
     error: '',
     success: false,
@@ -26,6 +27,7 @@ function Signup() {
     photo,
     email,
     password,
+    password2,
     error,
     success
   } = values
@@ -40,16 +42,37 @@ function Signup() {
     })
   }
 
-  const api = (data) => {
-    return fetch("/Signup", {
+  async function api(data){
+
+    const response = await fetch("/Signup", {
       method: "POST",
       body: data,
       multiples: true
-    }).then(res => res.json()).catch(err => console.log(err))
-  }
+    })
 
-  function locate(){
-    window.location.href = "/Signin"
+    const resp = await response.json()
+    console.log(resp)
+    
+    if(resp.status === "Emptyfields")
+    {
+      alert("You have some empty fields, please fill all fields")
+    }
+    else if(resp.status === "Image is too large")
+    {
+      alert("Please upload smaller images")
+    }
+    else if(resp.status === "error")
+    {
+      alert("Something went wrong on our server please try again later")
+    }
+    else if(resp.status === "Passwords missmatch")
+    {
+      alert("The passwords don't match")
+    }
+    else{
+      alert("Signup was successfull")
+      window.location.href = "/Signin"
+    }
   }
 
   return (
@@ -90,13 +113,13 @@ function Signup() {
 
           <Form.Control style={{width:"526px"}} className="signup179-image2" type="password" placeholder="Password" onChange={onHandleChange('password')}/>
 
-          <Form.Control style={{width:"526px"}} className="signup179-image3" type="password" placeholder="Password" onChange={onHandleChange('password')}/>
+          <Form.Control style={{width:"526px"}} className="signup179-image3" type="password" placeholder="Confirm password" onChange={onHandleChange('password2')}/>
 
           <Form.Control style={{width:"526px"}} className="signup179-image4" type="file" multiple onChange={onHandleChange('photo')}/>
           
         </Form>
 
-        <button className="signup179-button577" onClick={() => api(formData).then(locate) }>
+        <button className="signup179-button577" onClick={() => api(formData)}>
           <span className="signup179-text05">Sign up</span>
         </button>
 

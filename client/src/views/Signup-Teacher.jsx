@@ -34,17 +34,35 @@ const SignupTeacher = (props) => {
     formData.set(name, value);
   }
 
-  const api = (data) => {
-    return fetch("/SignupTeacher", {
+  async function api(data){
+    const response = await fetch("/SignupTeacher", {
       method: "POST",
       body: data,
       multiples: true
-    }).then(res => res.json()).catch(err => console.log(err))
+    })
+
+    const resp = await response.json()
+    console.log(resp)
+    
+    if(resp.status === "Emptyfields")
+    {
+      alert("You have some empty fields, please fill all fields")
+    }
+    else if(resp.status === "error")
+    {
+      alert("Something went wrong on our server please try again later")
+    }
+    else if(resp.status === "Passwords missmatch")
+    {
+      alert("The passwords don't match")
+    }
+    else{
+      alert("Signup was successfull")
+      window.location.href = "/Signin"
+    }
+
   }
 
-  function locate(){
-    window.location.href = "/Signin"
-  }
   
   return (
     <div className="signup-teacher1428-container">
@@ -70,7 +88,7 @@ const SignupTeacher = (props) => {
 
           <Form.Control style={{width:"526px"}} className="signup179-image2" type="password" placeholder="Password" onChange={onHandleChange('password')}/>
 
-          <Form.Control style={{width:"526px"}} className="signup179-image3" type="password" placeholder="Password" onChange={onHandleChange('password')}/>
+          <Form.Control style={{width:"526px"}} className="signup179-image3" type="password" placeholder="Confirm password" onChange={onHandleChange('password')}/>
           
         </Form>
         <img
@@ -78,7 +96,7 @@ const SignupTeacher = (props) => {
             alt="Button14211"
             className="signup-teacher1428-image1"
           />
-        <button className="signup-teacher1428-image1" onClick={() => api(formData).then(locate) }>
+        <button className="signup-teacher1428-image1" onClick={() => api(formData)}>
         </button>
           
         </div>

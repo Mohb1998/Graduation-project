@@ -35,7 +35,9 @@ function ContactUs(props) {
 
           <input style={{width:"526px"}} className={styles['image02']} name="message" type="text"/>
 
-          <button type="submit">Send message</button>
+          <button type="submit" className={styles["contactus1366-button16317"]}>
+            <span className={styles["contactus1366-text4"]}>Send</span>
+          </button>
         </form>
           
       </div>
