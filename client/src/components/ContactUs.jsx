@@ -17,8 +17,11 @@ function ContactUs(props) {
       ).then(res => {
         console.log(res)
         alert('Your email has been sent we will get back to you soon 😊')
-      }).catch(err => 
-        console.log(err))
+      }).catch(err => {
+        console.log(err)
+        alert("We couldn't send the email")
+      }
+        )
   }
 
   return (
@@ -33,7 +36,7 @@ function ContactUs(props) {
 
           <input style={{width:"260px"}} className={styles['image01']} name="email" type="email" placeholder="Enter email"/>
 
-          <input style={{width:"526px"}} className={styles['image02']} name="message" type="text"/>
+          <textarea style={{width:"526px"}} className={styles['image02']} name="message" type="text" placeholder="Enter your feedback"/>
 
           <button type="submit" className={styles["contactus1366-button16317"]}>
             <span className={styles["contactus1366-text4"]}>Send</span>
