@@ -44,12 +44,38 @@ function MeetingRoom()
 
     //Student
     if (!isPub) {
+
+      LocalStream.getUserMedia({
+        video: false,
+        audio: true,
+        codec: "vp8"
+      })
+      .then((media) => {
+      displayStream = media;
+      navigator.mediaDevices.getUserMedia({ audio : true })
+        .then((stream) => {
+          var audioTracks = stream.getAudioTracks();
+          for (var i = 0; i < audioTracks.length; i++) {
+            displayStream.addTrack(audioTracks[i]);
+          }
+
+          subVideo.current.srcObject = displayStream;
+          subVideo.current.autoplay = false;
+          subVideo.current.controls = true;
+          subVideo.current.muted = false;
+          subVideo.current.audio = true;
+          client.publish(displayStream);
+      });
+
+      }).catch(console.error);
+
+
       client.ontrack = (track, stream) => {
         console.log("got track: ", track.id, "for stream: ", stream.id);
         track.onunmute = () => {
           subVideo.current.srcObject = stream;
           subVideo.current.autoplay = true;
-          subVideo.current.muted = false;
+          subVideo.current.muted = true;
 
           stream.onremovetrack = () => {
             subVideo.current.srcObject = null;
@@ -105,7 +131,7 @@ function MeetingRoom()
       pubVideo.current.muted = false;
       pubVideo.current.audio = true;
       client.publish(displayStream);
-});
+      });
 
       }).catch(console.error);
 
