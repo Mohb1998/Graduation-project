@@ -13,6 +13,8 @@ import SignupTeacher from "./views/Signup-Teacher.jsx"
 
 import PreSignup from "./views/PreSignup.jsx"
 
+import FaceTrack from "./views/FaceTrack.jsx";
+
 function App()
 {
     return(
@@ -48,6 +50,10 @@ function App()
 
             <Routes>
                 <Route exact path='/MeetingRoom' element={<MeetingRoom/>} />
+            </Routes>
+
+            <Routes>
+                <Route exact path='/Facetrack' element={<FaceTrack/>} />
             </Routes>
 
         </div>

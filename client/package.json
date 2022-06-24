@@ -11,5 +11,8 @@
   },
   "author": "",
   "license": "ISC",
-  "proxy": "http://localhost:5000/"
+  "proxy": "http://localhost:5000/",
+  "dependencies": {
+    "face-api.js": "^0.22.2"
+  }
 }
