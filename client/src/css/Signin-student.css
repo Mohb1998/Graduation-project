@@ -1,0 +1,427 @@
+.signinstudent-container {
+  min-height: 100vh;
+}
+.signinstudent-signinstudent {
+  width: 1920px;
+  height: 1080px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  max-width: 1920px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  border-color: transparent;
+  background-color: rgba(255, 255, 255, 1);
+}
+.signinstudent-signinform {
+  top: 210px;
+  left: 72px;
+  width: 1775px;
+  height: 673px;
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+}
+.signinstudent-rectangle8 {
+  top: 31px;
+  left: 0px;
+  width: 1775px;
+  height: 661px;
+  position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: transparent;
+  background-color: rgba(178, 205, 246, 0.6000000238418579);
+}
+.signinstudent-button {
+  top: 496px;
+  left: 551.5830078125px;
+  width: 181px;
+  height: 35.5121955871582px;
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+}
+.signinstudent-rectangle2 {
+  top: 0px;
+  left: 0px;
+  width: 181px;
+  height: 36px;
+  position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: transparent;
+  background-color: rgba(57, 108, 241, 1);
+}
+.signinstudent-text {
+  top: 0px;
+  left: 50.4169921875px;
+  color: rgba(255, 255, 255, 1);
+  width: 79px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.signinstudent-text01 {
+  top: -10px;
+  left: 0px;
+  color: rgba(0, 0, 0, 1);
+  width: 105px;
+  height: auto;
+  position: absolute;
+  font-size: 32px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.signinstudent-text02 {
+  top: 241.1219482421875px;
+  left: 75.861328125px;
+  color: rgba(0, 0, 0, 1);
+  width: 190px;
+  height: auto;
+  position: absolute;
+  font-size: 32px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.signinstudent-text03 {
+  top: 333.07318115234375px;
+  left: 75.861328125px;
+  color: rgba(0, 0, 0, 1);
+  width: 190px;
+  height: auto;
+  position: absolute;
+  font-size: 32px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.signinstudent-rectangle9 {
+  top: 239.2195281982422px;
+  left: 310.1943359375px;
+  width: 614px;
+  height: 33px;
+  position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: transparent;
+  background-color: rgba(255, 255, 255, 1);
+}
+.signinstudent-rectangle10 {
+  top: 328.6341552734375px;
+  left: 310.1943359375px;
+  width: 614px;
+  height: 33px;
+  position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: transparent;
+  background-color: rgba(255, 255, 255, 1);
+}
+.signinstudent-button1 {
+  top: 773px;
+  left: 1324px;
+  width: 174px;
+  height: 71px;
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  background-color: rgba(57, 108, 241, 1);
+}
+.signinstudent-text04 {
+  top: 0px;
+  left: 50.4169921875px;
+  color: rgba(255, 255, 255, 1);
+  width: 79px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.signinstudent-button2 {
+  top: 773px;
+  left: 1595px;
+  width: 181px;
+  height: 71px;
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  background-color: rgba(57, 108, 241, 1);
+}
+.signinstudent-text05 {
+  top: 0px;
+  left: 50.4169921875px;
+  color: rgba(255, 255, 255, 1);
+  width: 79px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.signinstudent-navbar {
+  top: 1px;
+  left: 0px;
+  width: 1920px;
+  height: 60px;
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  background-color: rgba(88, 109, 182, 0.7400000095367432);
+}
+.signinstudent-text06 {
+  top: 9px;
+  left: 30px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 36px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.signinstudent-text07 {
+  top: 15px;
+  left: 1380px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.signinstudent-text08 {
+  top: 15px;
+  left: 1541px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.signinstudent-text09 {
+  top: 15px;
+  left: 1703px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.signinstudent-text10 {
+  top: 15px;
+  left: 1784px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.signinstudent-svg {
+  left: -88px;
+  width: 300;
+  bottom: -91px;
+  height: 300;
+  position: absolute;
+}
+.signinstudent-footer {
+  top: 1021px;
+  left: 0px;
+  width: 1920px;
+  height: 59px;
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  background-color: rgba(88, 109, 183, 0.7599999904632568);
+}
+.signinstudent-text11 {
+  top: 0px;
+  left: 18px;
+  color: rgba(255, 255, 255, 1);
+  width: 180px;
+  height: auto;
+  position: absolute;
+  font-size: 48px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.signinstudent-text12 {
+  top: 10px;
+  left: 1549px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 32px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.signinstudent-text13 {
+  top: 10px;
+  left: 1777px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 32px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.signinstudent-svg1 {
+  top: 23px;
+  left: 1748px;
+  width: 24;
+  height: 18;
+  position: absolute;
+}
+.signinstudent-svg2 {
+  top: 21px;
+  left: 1510px;
+  width: 24;
+  height: 20;
+  position: absolute;
+}
+.signinstudent-rectangle21 {
+  top: 348px;
+  left: 1303px;
+  width: 506px;
+  height: 383px;
+  position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: transparent;
+  background-color: rgba(0, 0, 0, 1);
+}
+.signinstudent-text14 {
+  top: 259px;
+  color: rgba(0, 0, 0, 1);
+  right: 117px;
+  width: 498px;
+  height: auto;
+  position: absolute;
+  font-size: 32px;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.signinstudent-rectangle22 {
+  top: 560px;
+  left: 1044px;
+  width: 227px;
+  height: 171px;
+  position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: transparent;
+  background-color: rgba(0, 0, 0, 1);
+}

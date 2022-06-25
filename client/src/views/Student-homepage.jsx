@@ -34,7 +34,7 @@ function Studentpage() {
           alt="Rectangle1614845"
           className="studenttransit1482-image1"
         />
-        <Link to ="/MeetingRoom/">
+        <Link to ="/MeetingRoom2/">
           <button className="studenttransit1482-text09">
             Join a room
           </button>

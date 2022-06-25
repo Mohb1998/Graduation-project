@@ -1,7 +1,7 @@
-.studentpage462-container {
+.studentpage-container {
   min-height: 100vh;
 }
-.studentpage462-studentpage462 {
+.studentpage-studentpage {
   width: 1920px;
   height: 1080px;
   display: flex;
@@ -13,7 +13,7 @@
   border-color: transparent;
   background-color: rgba(255, 255, 255, 1);
 }
-.studentpage462-navbar463 {
+.studentpage-navbar {
   top: 0px;
   left: 0px;
   width: 1920px;
@@ -26,7 +26,7 @@
   border-color: transparent;
   background-color: rgba(88, 109, 182, 0.7400000095367432);
 }
-.studentpage462-text {
+.studentpage-text {
   top: 9px;
   left: 30px;
   color: rgba(0, 0, 0, 1);
@@ -42,7 +42,7 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.studentpage462-text1 {
+.studentpage-text1 {
   top: 15px;
   left: 162px;
   color: rgba(255, 255, 255, 1);
@@ -58,7 +58,7 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.studentpage462-text2 {
+.studentpage-text2 {
   top: 15px;
   left: 323px;
   color: rgba(255, 255, 255, 1);
@@ -74,7 +74,7 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.studentpage462-text3 {
+.studentpage-text3 {
   top: 15px;
   left: 485px;
   color: rgba(255, 255, 255, 1);
@@ -90,7 +90,7 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.studentpage462-text4 {
+.studentpage-text4 {
   top: 15px;
   left: 566px;
   color: rgba(255, 255, 255, 1);
@@ -106,19 +106,151 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.studentpage462-svg {
+.studentpage-svg {
   top: 847px;
   left: -80px;
   width: 300;
   height: 300;
   position: absolute;
 }
-.studentpage462-image {
-  top: 167px;
-  left: 105px;
-  width: 1710px;
+.studentpage-videobox {
+  top: 137px;
+  left: 69px;
+  width: 1117px;
   height: 745px;
   position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: transparent;
+  background-color: rgba(0, 0, 0, 1);
+}
+.studentpage-group3 {
+  top: 959px;
+  left: 1125px;
+  width: 255px;
+  height: 73px;
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  background-color: rgba(100, 158, 211, 1);
+}
+.studentpage-text5 {
+  top: 22px;
+  left: 3.787130117416382px;
+  color: rgba(255, 255, 255, 1);
+  width: 247px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.studentpage-group6 {
+  top: 959px;
+  left: 1424px;
+  width: 255px;
+  height: 73px;
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  background-color: rgba(100, 158, 211, 1);
+}
+.studentpage-text6 {
+  top: 22px;
+  left: 3.787130117416382px;
+  color: rgba(255, 255, 255, 1);
+  width: 247px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.studentpage-group5 {
+  top: 959px;
+  left: 809px;
+  width: 255px;
+  height: 73px;
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  background-color: rgba(100, 158, 211, 1);
+}
+.studentpage-text7 {
+  top: 22px;
+  left: 3.787130117416382px;
+  color: rgba(255, 255, 255, 1);
+  width: 247px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.studentpage-group4 {
+  top: 959px;
+  left: 489px;
+  width: 260px;
+  height: 73px;
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  background-color: rgba(100, 158, 211, 1);
+}
+.studentpage-text8 {
+  top: 22px;
+  left: 3.8613860607147217px;
+  color: rgba(255, 255, 255, 1);
+  width: 252px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.studentpage-rectangle20 {
+  top: 400px;
+  left: 1261px;
+  width: 640px;
+  height: 480px;
+  position: absolute;
+  box-sizing: border-box;
   object-fit: cover;
   border-color: transparent;
   background-color: rgba(0, 0, 0, 1);

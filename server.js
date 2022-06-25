@@ -57,6 +57,23 @@ const userSchema = new mongoose.Schema({
 })
 const User = mongoose.model("User", userSchema)
 
+const studentSigninSchema = new mongoose.Schema({
+  email: {
+    type: String,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  photo: {
+    data: Buffer,
+    contentType: String
+  },
+}, {
+  collection: 'Student-signin'
+})
+const Studentsignin = mongoose.model("Studentsignin", studentSigninSchema)
 
 const teacherSchema = new mongoose.Schema({
   name: {
@@ -224,8 +241,64 @@ app.post("/Signin", async (req, res) => {
 
 })
 
+const signinData = (req, res) => {
+  console.log("Wasal hena")
+  const formsignin = new formidable.IncomingForm({
+    multiples: true
+  });
+
+  formsignin.parse(req, (err, fields, file) => {
+
+    console.log("W delwa2ti hena")
+    console.log(fields)
+    if (fields) {
+      const {
+        email,
+        password,
+        photo,
+      } = fields
+
+      if (!email || !password) {
+        return res.json({
+          status:"Emptyfields"
+        })
+      }
+
+    }
+
+    if (file.photo) {
+      console.log("W a5iran hena")
+      if (file.photo.size > 4000000) {
+        return res.json({
+          status: "Image is too large"
+        })
+      }
+
+      const studentsignin = new Studentsignin(fields)
+      studentsignin.photo.data = fs.readFileSync(file.photo.filepath)
+      studentsignin.photo.contentType = file.photo.type
+
+      studentsignin.save((err, studentsignin) => {
+        if (studentsignin) {
+          return res.json({
+            status: 'ok',
+          })
+        } else {
+          return res.json({
+            status: 'error',
+          })
+        }
+
+      })
+    }
+
+  })
+}
+app.post("/SigninStudent", signinData)
+
 //This will be the function used to retrieve the data from the database and access the images
 //We should use the email as it is a unique atribute and can't be a duplicate
+
 // User.find({email:"mohebkhaled16@yahoo.com"}, (err, data) => {
 //   console.log("Searching database ...")
 //   if(err)

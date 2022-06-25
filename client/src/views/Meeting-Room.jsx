@@ -140,9 +140,6 @@ function MeetingRoom()
 
   return (
     <div>
-
-        {isPub ?
-        (
           <div>
 
             <div id="pubVideo" className="bg-black" controls ref={pubVideo}></div>
@@ -188,23 +185,6 @@ function MeetingRoom()
                   </div>
                 </div>
           </div>
-        )
-        
-        :( 
-          <div>
-              <div className="studentpage462-container">
-                  <div className="studentpage462-studentpage462">
-                      <Navbar2 />
-                      <img alt="Ellipse54634"
-                          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjIwJyBoZWlnaHQ9JzIzMycgdmlld0JveD0nMCAwIDIyMCAyMzMnIGZpbGw9J25vbmUnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+CjxjaXJjbGUgY3g9JzcwJyBjeT0nMTUwJyByPScxNTAnIGZpbGw9JyMzOTZERjEnIGZpbGwtb3BhY2l0eT0nMC4yNScvPgo8L3N2Zz4K"
-                          className="studentpage462-svg" />
-
-                      <video id="subVideo" className="studentpage462-image" controls ref={subVideo}></video>
-                  </div>
-              </div>
-          </div>
-        )}
-
     </div>
   );
 }
