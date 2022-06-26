@@ -10,6 +10,7 @@ import Signin from "./views/Signin.jsx"
 import Signinstudent from "./views/Signin-student.jsx";
 
 import PreSignup from "./views/PreSignup.jsx"
+import PreSignin from "./views/PreSignin.jsx"
 
 import SignupStudent from "./views/Signup-Student.jsx"
 import SignupTeacher from "./views/Signup-Teacher.jsx"
@@ -60,6 +61,10 @@ function App()
 
             <Routes>
                 <Route exact path='/Signinstudent' element={<Signinstudent/>} />
+            </Routes>
+
+            <Routes>
+                <Route exact path='/PreSignin' element={<PreSignin/>} />
             </Routes>
 
         </div>

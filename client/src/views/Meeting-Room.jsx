@@ -101,6 +101,7 @@ function MeetingRoom()
         pubVideo.current.autoplay = true;
         pubVideo.current.controls = true;
         pubVideo.current.muted = false;
+        subVideo.current.MediaTrackSupportedConstraints.noiseSuppression = true;
         client.publish(media);
       }).catch(console.error);
 
