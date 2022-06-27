@@ -1,8 +1,7 @@
 import React from "react";
 import emailjs from "emailjs-com"
 
-import styles from '../css/landingpage.module.css'
-
+import '../css/contactus.css'
 
 function ContactUs(props) {
 
@@ -25,24 +24,35 @@ function ContactUs(props) {
   }
 
   return (
-      <div id="Contactus" className={styles['contactform2738']}>
-        <span className={styles['text03']}>Contact us</span>
-        <span className={styles['text04']}>Email :</span>
-        <span className={styles['text05']}>Name :</span>
-        <span className={styles['text06']}>Comment :</span>
+    <div className="contactus-container">
+      <div className="contactus-contactus">
+        <span className="contactus-text">Contact us</span>
+          <span className="contactus-text1">Email :</span>
+          <span className="contactus-text2">Name :</span>
+          <span className="contactus-text3">Category :</span>
+          <span className="contactus-text4">Comment :</span>
 
-        <form onSubmit={handleEmail}>
-          <input style={{width:"260px"}} className={styles['image']} name="name" type="text" placeholder="Enter your first name"/>
+          <form onSubmit={handleEmail}>
 
-          <input style={{width:"260px"}} className={styles['image01']} name="email" type="email" placeholder="Enter email"/>
+            <input className="contactus-rectangle5" name="name" type="text" placeholder=" Enter your first name"/>
 
-          <textarea style={{width:"526px"}} className={styles['image02']} name="message" type="text" placeholder="Enter your feedback"/>
+            <input className="contactus-rectangle7" name="email" type="email" placeholder=" Enter your email"/>
 
-          <button type="submit" className={styles["contactus1366-button16317"]}>
-            <span className={styles["contactus1366-text4"]}>Send</span>
-          </button>
-        </form>
-          
+            <input list="category" className="contactus-rectangle8" placeholder="Choose category" name="category"/>
+            <datalist id="category" className="contactus-rectangle8" name="category" type="text" placeholder=" Enter category">
+              <option value="Complain"></option>
+              <option value="Suggestion"></option>
+              <option value="Enquirers"></option>
+            </datalist>
+
+            <textarea className="contactus-rectangle6" name="message" placeholder=" Write your feedback"/>
+
+            <button type="submit" className="contactus-button">
+              <span className="contactus-text5">Send</span>
+            </button>
+            
+          </form>  
+        </div>
       </div>
   )
 }

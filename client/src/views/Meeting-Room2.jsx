@@ -3,7 +3,6 @@ import React, { useEffect, useRef } from 'react';
 import { Client, LocalStream } from 'ion-sdk-js';
 import { IonSFUJSONRPCSignal } from 'ion-sdk-js/lib/signal/json-rpc-impl';
 
-import  '../css/teacherpage.css'
 import  '../css/studentpage.css'
 
 import Navbar2 from '../components/Navbar2'
@@ -70,7 +69,7 @@ function MeetingRoom2()
           canvasRef && canvasRef.current && faceapi.draw.drawFaceLandmarks(canvasRef.current, resizedDetections);
           canvasRef && canvasRef.current && faceapi.draw.drawFaceExpressions(canvasRef.current, resizedDetections);
         }
-      }, 100)
+      }, 1000)
     }
   
     const closeWebcam = () => {
@@ -81,7 +80,7 @@ function MeetingRoom2()
 
     const subVideo = useRef();
   
-    let isPub, client, signal;
+    let isPub = false, client, signal;
     let displayStream;
   
     const config = {
@@ -92,15 +91,6 @@ function MeetingRoom2()
       ],
     };
     
-    // http://localhost:8000/?publish=true
-    //Check the url to see if the client is a publisher or a viewer
-    const URL = new URLSearchParams(window.location.search).get("publish");
-    console.log("url", URL);
-    if (URL) {
-      isPub = true;
-    } else {
-      isPub = false;
-    }
   
     //When the app mounts for the first time we will create a new connection to the server
     useEffect(() => {
@@ -170,7 +160,7 @@ function MeetingRoom2()
         <video id="subVideo" className="studentpage-videobox" controls ref={subVideo}></video>
 
         <div className="studentpage-group3">
-          <span className="studentpage-text5">Unmute</span>
+          <span className="studentpage-text5">Raise hand</span>
         </div>
 
 
@@ -193,7 +183,7 @@ function MeetingRoom2()
 
 
         <div className="studentpage-group5">
-          <span className="studentpage-text7">Raise Hand</span>
+          <span className="studentpage-text7">Unmute</span>
         </div>
         <div className="studentpage-group4">
           <span className="studentpage-text8">Mute</span>

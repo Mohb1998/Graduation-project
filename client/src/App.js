@@ -6,17 +6,17 @@ import Landingpage from "./views/Landing-page"
 import Teacherpage from "./views/Teacher-homepage.jsx";
 import StudentHomePage from "./views/Student-homepage.jsx";
 
-import Signin from "./views/Signin.jsx"
+import SigninTeacher from "./views/Signin-teacher.jsx"
 import Signinstudent from "./views/Signin-student.jsx";
 
-import PreSignup from "./views/PreSignup.jsx"
 import PreSignin from "./views/PreSignin.jsx"
 
 import SignupStudent from "./views/Signup-Student.jsx"
-import SignupTeacher from "./views/Signup-Teacher.jsx"
 
 import MeetingRoom2 from "./views/Meeting-Room2.jsx";
 import MeetingRoom from "./views/Meeting-Room.jsx";
+
+import Forgotcredentials from "./views/Forgotcredentials";
 
 function App()
 {
@@ -28,19 +28,11 @@ function App()
             </Routes>
 
             <Routes>
-                <Route exact path='/Signin' element={<Signin/>} />
-            </Routes>
-
-            <Routes>
-                <Route exact path='/PreSignup' element={<PreSignup/>} />
+                <Route exact path='/SigninTeacher' element={<SigninTeacher/>} />
             </Routes>
 
             <Routes>
                 <Route exact path='/SignupStudent' element={<SignupStudent/>} />
-            </Routes>
-
-            <Routes>
-                <Route exact path='/SignupTeacher' element={<SignupTeacher/>} />
             </Routes>
 
             <Routes>
@@ -65,6 +57,10 @@ function App()
 
             <Routes>
                 <Route exact path='/PreSignin' element={<PreSignin/>} />
+            </Routes>
+
+            <Routes>
+                <Route exact path='/Forgotcredentials' element={<Forgotcredentials/>} />
             </Routes>
 
         </div>

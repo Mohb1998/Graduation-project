@@ -1,89 +1,9 @@
-.signin271-container {
+.signin-container {
   min-height: 100vh;
 }
-
-.signin271-footer1389 {
-  top: 1020px;
-  left: 0px;
+.signin-signin {
   width: 1920px;
-  height: 59px;
-  display: flex;
-  position: absolute;
-  box-sizing: border-box;
-  align-items: flex-start;
-  flex-shrink: 1;
-  border-color: transparent;
-  background-color: rgba(88, 109, 183, 0.7599999904632568);
-}
-
-.signin271-text009 {
-  top: 0px;
-  left: 18px;
-  color: rgb(255, 255, 255);
-  width: 180px;
-  height: auto;
-  position: absolute;
-  font-size: 48px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.signin271-text10 {
-  top: 10px;
-  left: 1549px;
-  color: rgba(255, 255, 255, 1);
-  height: auto;
-  position: absolute;
-  font-size: 32px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.signin271-text11 {
-  top: 10px;
-  left: 1777px;
-  color: rgba(255, 255, 255, 1);
-  height: auto;
-  position: absolute;
-  font-size: 32px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.signin271-svg3 {
-  top: 23px;
-  left: 1748px;
-  width: 24;
-  height: 18;
-  position: absolute;
-}
-.signin271-svg4 {
-  top: 21px;
-  left: 1510px;
-  width: 24;
-  height: 20;
-  position: absolute;
-}
-
-
-.signin271-signin271 {
-  width: 1900px;
-  height: 1080px;
+  height: 900px;
   display: flex;
   overflow: hidden;
   position: relative;
@@ -91,14 +11,12 @@
   box-sizing: border-box;
   align-items: flex-start;
   border-color: transparent;
-  background-color: rgba(255, 255, 255, 1);
 }
-
-.signin271-signinform550 {
-  top: 187px;
-  left: 402px;
-  width: 1116px;
-  height: 656px;
+.signin-signinform {
+  top: 121px;
+  left: 166px;
+  width: 1568px;
+  height: 733px;
   display: flex;
   position: absolute;
   box-sizing: border-box;
@@ -106,23 +24,22 @@
   flex-shrink: 1;
   border-color: transparent;
 }
-
-.signin271-image {
-  top: 50px;
+.signin-rectangle8 {
+  top: 44px;
   left: 0px;
-  width: 1116px;
-  height: 606px;
+  width: 1568px;
+  height: 689px;
   position: absolute;
+  box-sizing: border-box;
   object-fit: cover;
   border-color: transparent;
   background-color: rgba(178, 205, 246, 0.6000000238418579);
 }
-
-.signin271-button543 {
-  top: 511px;
-  left: 470px;
-  width: 176px;
-  height: 56px;
+.signin-button {
+  top: 522px;
+  left: 882px;
+  width: 216px;
+  height: 50.0366096496582px;
   display: flex;
   position: absolute;
   box-sizing: border-box;
@@ -130,12 +47,14 @@
   flex-shrink: 1;
   border-color: transparent;
   background-color: rgba(57, 108, 241, 1);
+
 }
 
-.signin271-text {
-  top: 9px;
-  left: 49px;
+.signin-text {
+  top: 8.0415678024292px;
+  left: 60.14175033569336px;
   color: rgba(255, 255, 255, 1);
+  width: 95px;
   height: auto;
   position: absolute;
   font-size: 24px;
@@ -148,128 +67,44 @@
   font-stretch: normal;
   text-decoration: none;
 }
-
-.signin271-text01 {
-  top: 0px;
-  left: 0px;
-  color: rgba(0, 0, 0, 1);
-  height: auto;
-  position: absolute;
-  font-size: 32px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-
-.signin271-text02 {
-  top: 150px;
-  left: 31px;
-  color: rgba(0, 0, 0, 1);
-  width: 185px;
-  height: auto;
-  position: absolute;
-  font-size: 32px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-
-.signin271-text03 {
-  top: 295px;
-  left: 31px;
-  color: rgba(0, 0, 0, 1);
-  width: 185px;
-  height: auto;
-  position: absolute;
-  font-size: 32px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-
-.signin271-image1 {
-  top: 147px;
-  left: 259px;
-  width: 526px;
-  position: absolute;
-  background-color: rgba(255, 255, 255, 1);
-}
-
-.signin271-image2 {
-  top: 288px;
-  left: 259px;
-  width: 526px;
-  position: absolute;
-  background-color: rgba(255, 255, 255, 1);
-}
-
-
-.signin271-text04 {
-  top: 431px;
-  left: 31px;
-  color: rgba(0, 0, 0, 1);
-  height: auto;
-  position: absolute;
-  font-size: 20px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-
-.signin271-image3 {
-  top: 432px;
-  left: 216px;
-  width: 22px;
-  height: 22px;
-  position: absolute;
-  object-fit: cover;
-  border-color: rgba(0, 0, 0, 1);
-  border-style: solid;
-  border-width: 1.5px;
-  background-color: rgba(255, 255, 255, 1);
-}
-
-.signin271-navbar1721 {
-  top: 1px;
-  left: 0px;
-  width: 1920px;
-  height: 60px;
+.signin-button1 {
+  top: 522px;
+  left: 365px;
+  width: 307px;
+  height: 50px;
   display: flex;
   position: absolute;
   box-sizing: border-box;
   align-items: flex-start;
   flex-shrink: 1;
   border-color: transparent;
-  background-color: rgba(88, 109, 182, 0.7400000095367432);
+  background-color: rgba(57, 108, 241, 1);
 }
-
-.signin271-text05 {
-  top: 9px;
-  left: 30px;
+.signin-text1 {
+  top: 12px;
+  left: 49px;
+  color: rgba(255, 255, 255, 1);
+  width: 209px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.signin-text2 {
+  top: 0px;
+  left: 731px;
   color: rgba(0, 0, 0, 1);
+  width: 125px;
   height: auto;
   position: absolute;
-  font-size: 36px;
+  font-size: 32px;
   align-self: auto;
   font-style: normal;
   text-align: left;
@@ -279,14 +114,14 @@
   font-stretch: normal;
   text-decoration: none;
 }
-
-.signin271-text06 {
-  top: 15px;
-  left: 1380px;
-  color: rgba(255, 255, 255, 1);
+.signin-text3 {
+  top: 132px;
+  left: 123px;
+  color: rgba(0, 0, 0, 1);
+  width: 227px;
   height: auto;
   position: absolute;
-  font-size: 24px;
+  font-size: 32px;
   align-self: auto;
   font-style: normal;
   text-align: left;
@@ -296,14 +131,14 @@
   font-stretch: normal;
   text-decoration: none;
 }
-
-.signin271-text07 {
-  top: 15px;
-  left: 1541px;
-  color: rgba(255, 255, 255, 1);
+.signin-text4 {
+  top: 255px;
+  left: 123px;
+  color: rgba(0, 0, 0, 1);
+  width: 227px;
   height: auto;
   position: absolute;
-  font-size: 24px;
+  font-size: 32px;
   align-self: auto;
   font-style: normal;
   text-align: left;
@@ -313,14 +148,14 @@
   font-stretch: normal;
   text-decoration: none;
 }
-
-.signin271-text08 {
-  top: 15px;
-  left: 1703px;
-  color: rgba(255, 255, 255, 1);
+.signin-text5 {
+  top: 369px;
+  left: 123px;
+  color: rgba(0, 0, 0, 1);
+  width: 227px;
   height: auto;
   position: absolute;
-  font-size: 24px;
+  font-size: 32px;
   align-self: auto;
   font-style: normal;
   text-align: left;
@@ -330,14 +165,14 @@
   font-stretch: normal;
   text-decoration: none;
 }
-
-.signin271-text09 {
-  top: 15px;
-  left: 1784px;
-  color: rgba(255, 255, 255, 1);
+.signin-text6 {
+  top: 369px;
+  left: 123px;
+  color: rgba(0, 0, 0, 1);
+  width: 227px;
   height: auto;
   position: absolute;
-  font-size: 24px;
+  font-size: 32px;
   align-self: auto;
   font-style: normal;
   text-align: left;
@@ -347,26 +182,56 @@
   font-stretch: normal;
   text-decoration: none;
 }
-
-.signin271-svg {
+.signin-rectangle9 {
+  top: 126px;
+  left: 365px;
+  width: 733px;
+  height: 46px;
+  position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: transparent;
+  background-color: rgba(255, 255, 255, 1);
+}
+.signin-rectangle10 {
+  top: 240px;
+  left: 365px;
+  width: 733px;
+  height: 46px;
+  position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: transparent;
+  background-color: rgba(255, 255, 255, 1);
+}
+.signin-rectangle11 {
+  top: 354px;
+  left: 365px;
+  width: 733px;
+  height: 46px;
+  position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: transparent;
+  background-color: rgba(255, 255, 255, 1);
+}
+.signin-svg {
   top: 843px;
   left: -80px;
   width: 300;
   height: 300;
   position: absolute;
 }
-
-.signin271-svg1 {
+.signin-svg1 {
   top: 843px;
   left: -80px;
   width: 300;
   height: 300;
   position: absolute;
 }
-
-.signin271-svg2 {
-  top: 113px;
-  left: 1368px;
+.signin-svg2 {
+  top: 84px;
+  left: 1770px;
   width: 300;
   height: 300;
   position: absolute;

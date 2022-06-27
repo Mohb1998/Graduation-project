@@ -1,0 +1,175 @@
+.contactus-container {
+  min-height: 100vh;
+}
+.contactus-contactus {
+    top: 4101px;
+    left: 508px;
+    width: 904px;
+    height: 870px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    background-color: rgba(179, 206, 246, 0.6899999976158142);
+}
+.contactus-text {
+  top: 45px;
+  left: 329px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 48px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.contactus-text1 {
+  top: 171px;
+  left: 533px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.contactus-text2 {
+  top: 171px;
+  left: 40px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.contactus-text3 {
+  top: 307px;
+  left: 40px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.contactus-text4 {
+  top: 470px;
+  left: 39px;
+  color: rgba(0, 0, 0, 1);
+  width: 271px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.contactus-rectangle5 {
+  top: 214px;
+  left: 39px;
+  width: 332px;
+  height: 46px;
+  position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: rgba(0, 0, 0, 1);
+  border-width: 0px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.contactus-rectangle8 {
+  top: 343px;
+  left: 39px;
+  width: 332px;
+  height: 46px;
+  position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: rgba(0, 0, 0, 1);
+  border-width: 0px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.contactus-rectangle7 {
+  top: 214px;
+  left: 532px;
+  width: 329px;
+  height: 46px;
+  position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: rgba(0, 0, 0, 1);
+  border-width: 0px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.contactus-rectangle6 {
+  top: 509px;
+  left: 39px;
+  width: 822px;
+  height: 225px;
+  position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: rgba(0, 0, 0, 1);
+  border-width: 0px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.contactus-button {
+  top: 774px;
+  left: 364px;
+  width: 176px;
+  height: 56px;
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  background-color: rgba(57, 108, 241, 1);
+}
+.contactus-text5 {
+  top: 9px;
+  left: 45px;
+  color: rgba(255, 255, 255, 1);
+  width: 85px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}

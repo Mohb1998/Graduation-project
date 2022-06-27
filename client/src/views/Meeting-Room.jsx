@@ -4,7 +4,6 @@ import { Client, LocalStream } from 'ion-sdk-js';
 import { IonSFUJSONRPCSignal } from 'ion-sdk-js/lib/signal/json-rpc-impl';
 
 import  '../css/teacherpage.css'
-import  '../css/studentpage.css'
 
 import Navbar2 from '../components/Navbar2'
 
@@ -12,7 +11,6 @@ function MeetingRoom()
 {
 
   const pubVideo = useRef();
-  const subVideo = useRef();
 
   let isPub, client, signal;
   let displayStream;
@@ -40,49 +38,6 @@ function MeetingRoom()
     signal = new IonSFUJSONRPCSignal("ws://localhost:7000/ws");
     client = new Client(signal, config);
     signal.onopen = () => client.join("test room");
-
-
-    //Student
-    if (!isPub) {
-
-      LocalStream.getUserMedia({
-        video: false,
-        audio: true,
-        codec: "vp8"
-      })
-      .then((media) => {
-      displayStream = media;
-      navigator.mediaDevices.getUserMedia({ audio : true })
-        .then((stream) => {
-          var audioTracks = stream.getAudioTracks();
-          for (var i = 0; i < audioTracks.length; i++) {
-            displayStream.addTrack(audioTracks[i]);
-          }
-
-          subVideo.current.srcObject = displayStream;
-          subVideo.current.autoplay = false;
-          subVideo.current.controls = true;
-          subVideo.current.muted = false;
-          subVideo.current.audio = true;
-          client.publish(displayStream);
-      });
-
-      }).catch(console.error);
-
-
-      client.ontrack = (track, stream) => {
-        console.log("got track: ", track.id, "for stream: ", stream.id);
-        track.onunmute = () => {
-          subVideo.current.srcObject = stream;
-          subVideo.current.autoplay = true;
-          subVideo.current.muted = true;
-
-          stream.onremovetrack = () => {
-            subVideo.current.srcObject = null;
-          }
-        }
-      }
-    }
   }, []);
 
 
@@ -101,7 +56,7 @@ function MeetingRoom()
         pubVideo.current.autoplay = true;
         pubVideo.current.controls = true;
         pubVideo.current.muted = false;
-        subVideo.current.MediaTrackSupportedConstraints.noiseSuppression = true;
+        // subVideo.current.MediaTrackSupportedConstraints.noiseSuppression = true;
         client.publish(media);
       }).catch(console.error);
 
@@ -163,7 +118,7 @@ function MeetingRoom()
                     src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nOTc0JyBoZWlnaHQ9JzM4JyB2aWV3Qm94PScwIDAgOTc0IDM4JyBmaWxsPSdub25lJyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPgo8cmVjdCB3aWR0aD0nOTc0JyBoZWlnaHQ9JzM4JyBmaWxsPScjNjQ5RUQzJy8+Cjwvc3ZnPgo="
                     className="teacherpage4611-image2"
                   />
-                  <span className="teacherpage4611-text06">Studen't concentration</span>
+                  <span className="teacherpage4611-text06">Student concentration</span>
                   <span className="teacherpage4611-text07">80%</span>
                   <span className="teacherpage4611-text08">
                     <span>Mohb Khaled</span>

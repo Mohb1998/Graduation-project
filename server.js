@@ -1,13 +1,11 @@
 const express = require("express");
 var app = express();
 
+const twilio = require("twilio")
 
 const formidable = require("formidable")
-
 const cors = require("cors");
-
 const mongoose = require("mongoose");
-
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({
   extended: false
@@ -17,6 +15,12 @@ app.use(bodyParser.json())
 require('dotenv').config();
 
 app.use(cors())
+
+const accountSid = "AC8b624e11a0f990ce63696bdedb48a583";
+const authToken = "7303577d8cbf8f1ea54f4ba0ed665e2c";
+
+const client = new twilio(accountSid, authToken)
+
 app.use(express.json())
 
 var fs = require('fs');
@@ -207,28 +211,15 @@ app.post("/SignupTeacher", teacherData)
 
 app.post("/Signin", async (req, res) => {
 
-  const user = await User.findOne({
-    email: req.body.email,
-    password: req.body.password
-  })
-
   const teacher = await Teacher.findOne({
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
+    code : req.body.code
   })
 
-  console.log(teacher)
-
-  if (user) {
+   if(teacher){
     return res.json({
       status: 'ok',
-      student : true
-    })
-  }
-
-  else if(teacher){
-    return res.json({
-      status: 'oki',
       teacher : true
     })
   }
@@ -311,6 +302,19 @@ app.post("/SigninStudent", signinData)
 //     console.log(data)
 //   }
 // })
+
+app.get('/Forgotcredentials', (req, res) => {
+
+  //Send Text
+  console.log("ok hena")
+
+  client.messages.create({
+      body: req.query.textmessage,
+      to: "+" + req.query.recipient,  // Text this number
+      from: '+19783545760' // From a valid Twilio number
+  }).then((message) => console.log(message.body));
+
+})
 
 if(process.env.NODE_ENV === "production")
 {

@@ -70,7 +70,7 @@ const PreSignup = (props) =>
             </Button>
           </Link>
 
-          <Link to="/Signin">
+          <Link to="/SigninTeacher">
             <Button varient="primary" className="pre-signup1412-image1">
               <span ></span>
             </Button>

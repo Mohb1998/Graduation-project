@@ -35,7 +35,7 @@ const Landingpage = (props) => {
         </span>
         <span className={styles['text33']}>Smart monitoring redesigned</span>
         
-        <Link to ="/PreSignup">
+        <Link to ="/SignupStudent">
           <button className={styles['button120']}>
             <span className={styles['text34']}>Sign up</span>
           </button>

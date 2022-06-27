@@ -43,6 +43,7 @@
     "react-router-dom": "^6.0.2",
     "react-scripts": "^3.4.4",
     "react-webcam": "^6.0.0",
+    "twilio": "^3.77.3",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
