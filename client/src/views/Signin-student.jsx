@@ -4,6 +4,8 @@ import {
 } from "react"
 import Form from 'react-bootstrap/Form'
 import  { useEffect, useRef } from "react";
+import {Link} from "react-router-dom"
+
 
 
 // import GoogleButton from "../components/GoogleButton"
@@ -114,12 +116,11 @@ function Signinstudent () {
 
   return (
 
-<div className="signinstudent-container">
+    <div className="signinstudent-container">
 
-<div className="signinstudent-signinstudent">
+      <div className="signinstudent-signinstudent">
 
   <Navbar2 />
-  <Footer2 />
   <div className="signinstudent-signinform">
     <img
       src="/images/d89bd745-a0e2-4efb-bfd2-4edf21cd3727-a6g7.svg"
@@ -129,9 +130,9 @@ function Signinstudent () {
 
     <Form>
 
-      <span className="signinstudent-text01">Sign in</span>
-      <span className="signinstudent-text02">Email :</span>
-      <span className="signinstudent-text03">Password :</span>
+    <span className="signinstudent-text1">Sign in</span>
+          <span className="signinstudent-text2">Email :</span>
+          <span className="signinstudent-text3">Password :</span>
 
       <Form.Control style={{width:"526px"}} className="signinstudent-rectangle9" type="email" placeholder="Enter email" onChange={onHandleChange('email')}/>
       <Form.Control style={{width:"526px"}} className="signinstudent-rectangle10" type="password" placeholder="Password" onChange={onHandleChange('password')}/>
@@ -146,11 +147,11 @@ function Signinstudent () {
 
   </div>
   <button className="signinstudent-button1" onClick={takePicture}>
-    <span className="signinstudent-text04">Take picture</span>
+    <span className="signinstudent-text4">Take picture</span>
   </button>
 
   <button className="signinstudent-button2" onClick={clearImage}>
-    <span className="signinstudent-text05">Delete picture</span>
+    <span className="signinstudent-text5">Delete picture</span>
   </button>
 
   <img
@@ -163,11 +164,17 @@ function Signinstudent () {
   />
   <canvas className="container" ref={photoRef}></canvas>
   
-  <span className="signinstudent-text14">
+  <span className="signinstudent-text6">
     Make sure that you are well centered and have good lighting
   </span>
 
   <canvas ref={photoRef}className="signinstudent-rectangle22"/>
+
+  <Link to ="/Forgotcredentials">
+    <button className="signinstudent-button3">
+      <span className="signinstudent-text7">Forgot credentials</span>
+    </button>
+  </Link>
 
 </div>
 </div>

@@ -309,6 +309,7 @@ app.post("/SigninStudent", signinData)
 
 app.get('/Forgotcredentials', (req, res) => {
 
+  //Student
   let userEmail;
   let userPassword;
 
@@ -324,6 +325,34 @@ app.get('/Forgotcredentials', (req, res) => {
           userPassword = user.password; 
           console.log(userEmail) 
           console.log(userPassword)      
+      })
+
+      client.messages.create({
+        body: "Hello Sorry to hear you faced some trouble, here is you email: "+userEmail+" and this is your password: "+userPassword,
+        to: "+" + req.query.recipient,  // Text this number
+        from: '+19783545760' // From a valid Twilio number
+    }).then((message) => console.log(message.body));
+    }
+
+  })
+
+
+  //Teacher
+  let userEmail1;
+  let userPassword1;
+
+  Teacher.find({phone: req.query.recipient}, function(err, users){
+
+    if(err)
+    {
+      console.log(err)
+    }
+    else{
+      users.forEach(function(user){
+          userEmail1 = user.email;
+          userPassword1 = user.password; 
+          console.log(userEmail1) 
+          console.log(userPassword1)      
       })
 
       client.messages.create({

@@ -60,11 +60,8 @@ class Forgotcredentials  extends Component
       </div>
     )
 
-  }
-    
-
-    
-  }
+  }  
+}
 
 
 export default Forgotcredentials
