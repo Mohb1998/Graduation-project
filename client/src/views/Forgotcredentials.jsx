@@ -8,7 +8,7 @@ class Forgotcredentials  extends Component
   state = {
     text: {
       recipient: '',
-      textmessage: 'Oltelek enena gamdeen awi ba2a'
+      textmessage: ''
     }
   }
 
@@ -44,7 +44,7 @@ class Forgotcredentials  extends Component
   
             <span className="forgotcredentials-text1">Sign in</span>
             <span className="forgotcredentials-text2">Phone number :</span>
-            <input  className="forgotcredentials-rectangle9" value={text.recipient}
+            <input  className="forgotcredentials-rectangle9" placeholder="Please use the appropriate country code" value={text.recipient}
             onChange={e => this.setState({ text: { ...text, recipient: e.target.value } })} />
 
             <button className="forgotcredentials-button" onClick={this.textHandler}>

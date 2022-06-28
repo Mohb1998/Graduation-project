@@ -16,8 +16,8 @@ require('dotenv').config();
 
 app.use(cors())
 
-const accountSid = "AC8b624e11a0f990ce63696bdedb48a583";
-const authToken = "7303577d8cbf8f1ea54f4ba0ed665e2c";
+const accountSid = process.env.SID_TWILIO;
+const authToken = process.env.AUTH_TWILIO;
 
 const client = new twilio(accountSid, authToken)
 
@@ -46,6 +46,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true
+  },
+  phone: {
+    type: String,
+    required: true
   },
   password: {
     type: String,
@@ -305,14 +309,31 @@ app.post("/SigninStudent", signinData)
 
 app.get('/Forgotcredentials', (req, res) => {
 
-  //Send Text
-  console.log("ok hena")
+  let userEmail;
+  let userPassword;
 
-  client.messages.create({
-      body: req.query.textmessage,
-      to: "+" + req.query.recipient,  // Text this number
-      from: '+19783545760' // From a valid Twilio number
-  }).then((message) => console.log(message.body));
+  User.find({phone: req.query.recipient}, function(err, users){
+
+    if(err)
+    {
+      console.log(err)
+    }
+    else{
+      users.forEach(function(user){
+          userEmail = user.email;
+          userPassword = user.password; 
+          console.log(userEmail) 
+          console.log(userPassword)      
+      })
+
+      client.messages.create({
+        body: "Hello Sorry to hear you faced some trouble, here is you email: "+userEmail+" and this is your password: "+userPassword,
+        to: "+" + req.query.recipient,  // Text this number
+        from: '+19783545760' // From a valid Twilio number
+    }).then((message) => console.log(message.body));
+    }
+
+  })
 
 })
 

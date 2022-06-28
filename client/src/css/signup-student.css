@@ -1,9 +1,8 @@
-.signup179-container {
+.signup-student-container {
   min-height: 100vh;
 }
-
-.signup179-signup179 {
-  width: 1900px;
+.signup-student-signup-student {
+  width: 1920px;
   height: 1080px;
   display: flex;
   overflow: hidden;
@@ -12,129 +11,26 @@
   box-sizing: border-box;
   align-items: flex-start;
   border-color: transparent;
-  background-color: rgba(255, 255, 255, 1);
 }
-
-.signup179-navbar1710 {
-  top: 0px;
-  left: 0px;
-  width: 1920px;
-  height: 60px;
-  display: flex;
-  position: absolute;
-  box-sizing: border-box;
-  align-items: flex-start;
-  flex-shrink: 1;
-  border-color: transparent;
-  background-color: rgba(88, 109, 182, 0.7400000095367432);
-}
-
-.signup179-text {
-  top: 9px;
-  left: 30px;
-  color: rgba(0, 0, 0, 1);
-  height: auto;
-  position: absolute;
-  font-size: 36px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-
-.signup179-text01 {
-  top: 15px;
-  left: 162px;
-  color: rgba(255, 255, 255, 1);
-  height: auto;
-  position: absolute;
-  font-size: 24px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-
-.signup179-text02 {
-  top: 15px;
-  left: 323px;
-  color: rgba(255, 255, 255, 1);
-  height: auto;
-  position: absolute;
-  font-size: 24px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-
-.signup179-text03 {
-  top: 15px;
-  left: 485px;
-  color: rgba(255, 255, 255, 1);
-  height: auto;
-  position: absolute;
-  font-size: 24px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-
-.signup179-text04 {
-  top: 15px;
-  left: 566px;
-  color: rgba(255, 255, 255, 1);
-  height: auto;
-  position: absolute;
-  font-size: 24px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-
-.signup179-svg {
-  top: 825px;
-  left: 1665px;
+.signup-student-svg {
+  top: 930px;
+  left: 1756px;
   width: 300;
   height: 300;
   position: absolute;
 }
-
-.signup179-svg1 {
-  top: 53px;
-  left: -80px;
+.signup-student-svg1 {
+  top: 60px;
+  left: -150px;
   width: 300;
   height: 300;
   position: absolute;
 }
-
-.signup179-signinform575 {
-  top: 71px;
-  left: 402px;
-  width: 1116px;
-  height: 938px;
+.signup-student-signupform {
+  top: 104px;
+  left: 99px;
+  width: 1722px;
+  height: 904px;
   display: flex;
   position: absolute;
   box-sizing: border-box;
@@ -142,23 +38,55 @@
   flex-shrink: 1;
   border-color: transparent;
 }
-
-.signup179-image {
-  top: 51px;
+.signup-student-rectangle8 {
+  top: 40px;
   left: 0px;
-  width: 1116px;
-  height: 887px;
+  width: 1722px;
+  height: 864px;
   position: absolute;
+  box-sizing: border-box;
   object-fit: cover;
   border-color: transparent;
-  background-color: rgba(178, 205, 246, 0.38999998569488525);
+  background-color: rgba(178, 205, 246, 0.6000000238418579);
 }
-
-.signup179-button577 {
-  top: 846px;
-  left: 470px;
-  width: 176px;
-  height: 56px;
+.signup-student-rectangle26 {
+  top: 629px;
+  left: 1430px;
+  width: 141px;
+  height: 148px;
+  position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: transparent;
+  background-color: rgba(0, 0, 0, 1);
+}
+.signup-student-rectangle25 {
+  top: 629px;
+  left: 848px;
+  width: 141px;
+  height: 148px;
+  position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: transparent;
+  background-color: rgba(0, 0, 0, 1);
+}
+.signup-student-rectangle24 {
+  top: 629px;
+  left: 1042px;
+  width: 141px;
+  height: 148px;
+  position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: transparent;
+  background-color: rgba(0, 0, 0, 1);
+}
+.signup-student-button {
+  top: 810px;
+  left: 965px;
+  width: 272px;
+  height: 51.66557693481445px;
   display: flex;
   position: absolute;
   box-sizing: border-box;
@@ -166,12 +94,13 @@
   flex-shrink: 1;
   border-color: transparent;
   background-color: rgba(57, 108, 241, 1);
-}
 
-.signup179-text05 {
-  top: 9px;
-  left: 45px;
+}
+.signup-student-text {
+  top: 8.303194999694824px;
+  left: 69.43583679199219px;
   color: rgba(255, 255, 255, 1);
+  width: 131px;
   height: auto;
   position: absolute;
   font-size: 24px;
@@ -184,11 +113,11 @@
   font-stretch: normal;
   text-decoration: none;
 }
-
-.signup179-text06 {
+.signup-student-text1 {
   top: 0px;
-  left: 0px;
+  left: 861px;
   color: rgba(0, 0, 0, 1);
+  width: 176px;
   height: auto;
   position: absolute;
   font-size: 32px;
@@ -201,12 +130,11 @@
   font-stretch: normal;
   text-decoration: none;
 }
-
-.signup179-text07 {
-  top: 162px;
-  left: 105px;
+.signup-student-text2 {
+  top: 111.062744140625px;
+  left: 162.0166015625px;
   color: rgba(0, 0, 0, 1);
-  width: 185px;
+  width: 285px;
   height: auto;
   position: absolute;
   font-size: 32px;
@@ -219,12 +147,11 @@
   font-stretch: normal;
   text-decoration: none;
 }
-
-.signup179-text08 {
-  top: 381px;
-  left: 105px;
+.signup-student-text3 {
+  top: 116px;
+  left: 1063px;
   color: rgba(0, 0, 0, 1);
-  width: 185px;
+  width: 285px;
   height: auto;
   position: absolute;
   font-size: 32px;
@@ -237,12 +164,11 @@
   font-stretch: normal;
   text-decoration: none;
 }
-
-.signup179-text09 {
-  top: 489px;
-  left: 105px;
+.signup-student-text4 {
+  top: 313.1119384765625px;
+  left: 162.0166015625px;
   color: rgba(0, 0, 0, 1);
-  width: 185px;
+  width: 285px;
   height: auto;
   position: absolute;
   font-size: 32px;
@@ -255,12 +181,11 @@
   font-stretch: normal;
   text-decoration: none;
 }
-
-.signup179-text10 {
-  top: 272px;
-  left: 105px;
+.signup-student-text5 {
+  top: 413px;
+  left: 162px;
   color: rgba(0, 0, 0, 1);
-  width: 185px;
+  width: 305px;
   height: auto;
   position: absolute;
   font-size: 32px;
@@ -273,70 +198,136 @@
   font-stretch: normal;
   text-decoration: none;
 }
-
-.signup179-image1 {
-  top: 158px;
-  left: 421px;
-  width: 597px;
-  height: 58px;
-  position: absolute;
-  object-fit: cover;
-  border-color: transparent;
-  background-color: rgba(255, 255, 255, 1);
-}
-
-.signup179-image2 {
-  top: 376px;
-  left: 421px;
-  width: 597px;
-  height: 58px;
-  position: absolute;
-  object-fit: cover;
-  border-color: transparent;
-  background-color: rgba(255, 255, 255, 1);
-}
-
-.signup179-image3 {
-  top: 485px;
-  left: 421px;
-  width: 597px;
-  height: 58px;
-  position: absolute;
-  object-fit: cover;
-  border-color: transparent;
-  background-color: rgba(255, 255, 255, 1);
-}
-
-.signup179-image4 {
-  top: 621px;
-  left: 421px;
-  width: 597px;
-  height: 58px;
-  position: absolute;
-  object-fit: cover;
-  border-color: transparent;
-  background-color: rgba(255, 255, 255, 1);
-}
-
-.signup179-image5 {
-  top: 268px;
-  left: 421px;
-  width: 597px;
-  height: 58px;
-  position: absolute;
-  object-fit: cover;
-  border-color: transparent;
-  background-color: rgba(255, 255, 255, 1);
-}
-
-.signup179-text11 {
-  top: 701px;
-  left: 507px;
+.signup-student-text6 {
+  top: 212.548583984375px;
+  left: 162.0166015625px;
   color: rgba(0, 0, 0, 1);
-  width: 236px;
+  width: 285px;
   height: auto;
   position: absolute;
   font-size: 32px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.signup-student-rectangle9 {
+  top: 107px;
+  left: 650px;
+  width: 365px;
+  height: 54px;
+  position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: transparent;
+  background-color: rgba(255, 255, 255, 1);
+}
+.signup-student-rectangle27 {
+  top: 109px;
+  left: 1206px;
+  width: 365px;
+  height: 54px;
+  position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: transparent;
+  background-color: rgba(255, 255, 255, 1);
+}
+.signup-student-rectangle11 {
+  top: 308.4990234375px;
+  left: 649.607421875px;
+  width: 921px;
+  height: 54px;
+  position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: transparent;
+  background-color: rgba(255, 255, 255, 1);
+}
+.signup-student-rectangle12 {
+  top: 409.0625px;
+  left: 649.607421875px;
+  width: 921px;
+  height: 54px;
+  position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: transparent;
+  background-color: rgba(255, 255, 255, 1);
+}
+.signup-student-rectangle13 {
+  top: 534.535888671875px;
+  left: 649.607421875px;
+  width: 921px;
+  height: 54px;
+  position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: transparent;
+  background-color: rgba(255, 255, 255, 1);
+}
+.signup-student-rectangle10 {
+  top: 208.858154296875px;
+  left: 649.607421875px;
+  width: 921px;
+  height: 54px;
+  position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: transparent;
+  background-color: rgba(255, 255, 255, 1);
+}
+.signup-student-text7 {
+  top: 540.994140625px;
+  left: 162.0166015625px;
+  color: rgba(0, 0, 0, 1);
+  width: 364px;
+  height: auto;
+  position: absolute;
+  font-size: 32px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.signup-student-rectangle23 {
+  top: 629px;
+  left: 1236px;
+  width: 141px;
+  height: 148px;
+  position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: transparent;
+  background-color: rgba(0, 0, 0, 1);
+}
+.signup-student-rectangle231 {
+  top: 629px;
+  left: 654px;
+  width: 141px;
+  height: 148px;
+  position: absolute;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: transparent;
+  background-color: rgba(0, 0, 0, 1);
+}
+.signup-student-text8 {
+  top: 657px;
+  left: 162px;
+  color: rgba(0, 0, 0, 1);
+  width: 399px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
   align-self: auto;
   font-style: normal;
   text-align: left;

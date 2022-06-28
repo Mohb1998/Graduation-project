@@ -13,6 +13,7 @@ function Signup() {
   const [values, setValues] = useState({
     name: '',
     email: '',
+    phone: '',
     password: '',
     password2: '',
     photo: '',
@@ -26,6 +27,7 @@ function Signup() {
     formData,
     photo,
     email,
+    phone,
     password,
     password2,
     error,
@@ -76,56 +78,90 @@ function Signup() {
   }
 
   return (
-    <div className="signup179-container">
+    <div className="signup-student-container">
 
-      <div className="signup179-signup179">
+      <div className="signup-student-signup-student">
 
         <Navbar2 />
-        <Footer2 />
+        {/* <Footer2 /> */}
         <img
           alt="Ellipse51717"
-          src="/images/ellipse51717-6wza.svg"
-          className="signup179-svg"
+          src="/images/e797d46b-00ba-4a7f-9132-52a1cb4c075f-318a.svg"
+          className="signup-student-svg"
         />
         <img
           alt="Ellipse61718"
-          src="/images/ellipse61718-9kkw.svg"
-          className="signup179-svg1"
+          src="/images/c4dd65be-0ec0-4c3d-8284-1117cdc34630-zp19.svg"
+          className="signup-student-svg1"
         />
 
-        <div className="signup179-signinform575">
+
+        <div className="signup-student-signupform">
+
           <img
+            src="/images/7326f23e-7177-45aa-b1e0-69dcc0ed7c62-12yn.svg"
             alt="Rectangle8576"
-            src="/images/rectangle8576-rcsk.svg"
-            className="signup179-image"
+            className="signup-student-rectangle8"
+          />
+          <img
+            src="/images/a1e2473c-de8f-46e2-92ff-f89043758ef1-d5dm.svg"
+            alt="Rectangle2622010"
+            className="signup-student-rectangle26"
+          />
+          <img
+            src="/images/bbebcfd5-f4a1-421a-9a7e-26b8c2a638f2-ukde.svg"
+            alt="Rectangle252209"
+            className="signup-student-rectangle25"
+          />
+          <img
+            src="/images/10cfd503-03d1-45b0-b669-020354d4d695-nz9.svg"
+            alt="Rectangle242208"
+            className="signup-student-rectangle24"
+          />
+                    <img
+            src="/images/c85ee465-5ab1-4807-9b58-9291017576fa-w9jj.svg"
+            alt="Rectangle232207"
+            className="signup-student-rectangle23"
+          />
+          <img
+            src="/images/6b5adc37-2b2c-47c2-a3e2-577b57319ded-9hb.svg"
+            alt="Rectangle232206"
+            className="signup-student-rectangle231"
           />
 
-            <span className="signup179-text06">Sign up</span>
-            <span className="signup179-text07">Name :</span>
-            <span className="signup179-text08">Password :</span>
-            <span className="signup179-text09">Confirm password :</span>
-            <span className="signup179-text10">Email :</span>
+          <span className="signup-student-text1">Sign up</span>
+          <span className="signup-student-text2">Name :</span>
+          <span className="signup-student-text3">Phone :</span>
+          <span className="signup-student-text4">Password :</span>
+          <span className="signup-student-text5">Confirm password :</span>
+          <span className="signup-student-text6">Email :</span>
+          <span className="signup-student-text8">
+            Please make sure to upload images showing your profile like in these
+            examples
+          </span>
+          <span className="signup-student-text7">Image upload :</span>
 
         <Form>
-          <Form.Control style={{width:"526px"}} className="signup179-image1" type="text" placeholder="Enter your first name" onChange={onHandleChange('name')}/>
+          <Form.Control className="signup-student-rectangle9" type="text" placeholder="Enter your first name" onChange={onHandleChange('name')}/>
 
-          <Form.Control style={{width:"526px"}} className="signup179-image5" type="email" placeholder="Enter email" onChange={onHandleChange('email')}/>
+          <Form.Control className="signup-student-rectangle10" type="email" placeholder="Enter email" onChange={onHandleChange('email')}/>
 
-          <Form.Control style={{width:"526px"}} className="signup179-image2" type="password" placeholder="Password" onChange={onHandleChange('password')}/>
+          <Form.Control className="signup-student-rectangle27" type="numbers" placeholder="Enter phone" onChange={onHandleChange('phone')}/>
 
-          <Form.Control style={{width:"526px"}} className="signup179-image3" type="password" placeholder="Confirm password" onChange={onHandleChange('password2')}/>
+          <Form.Control className="signup-student-rectangle11" type="password" placeholder="Password" onChange={onHandleChange('password')}/>
 
-          <Form.Control style={{width:"526px"}} className="signup179-image4" type="file" multiple onChange={onHandleChange('photo')}/>
+          <Form.Control className="signup-student-rectangle12" type="password" placeholder="Confirm password" onChange={onHandleChange('password2')}/>
+
+          <Form.Control className="signup-student-rectangle13" type="file" multiple onChange={onHandleChange('photo')}/>
           
         </Form>
 
-        <button className="signup179-button577" onClick={() => api(formData)}>
-          <span className="signup179-text05">Sign up</span>
+        <button className="signup-student-button" onClick={() => api(formData)}>
+          <span className="signup-student-text">Sign up</span>
         </button>
 
         </div>
-        <span className="signup179-text11">Image upload :</span>
-
+        
       </div>
 
     </div>
