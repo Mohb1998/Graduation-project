@@ -94,7 +94,7 @@ function MeetingRoom2()
   
     //When the app mounts for the first time we will create a new connection to the server
     useEffect(() => {
-      signal = new IonSFUJSONRPCSignal("wss://176.58.107.71:7000/ws");
+      signal = new IonSFUJSONRPCSignal("ws://localhost:7000/ws");
       client = new Client(signal, config);
       signal.onopen = () => client.join("test room");
   
