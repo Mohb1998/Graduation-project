@@ -94,7 +94,7 @@ function MeetingRoom2()
   
     //When the app mounts for the first time we will create a new connection to the server
     useEffect(() => {
-      signal = new IonSFUJSONRPCSignal("ws://localhost:7000/ws");
+      signal = new IonSFUJSONRPCSignal("wss://176.58.107.71:7000/ws");
       client = new Client(signal, config);
       signal.onopen = () => client.join("test room");
   
@@ -151,11 +151,6 @@ function MeetingRoom2()
             <div className="studentpage-studentpage">
 
         <Navbar2/>
-        <img
-          alt="Ellipse54634"
-          src="/playground_assets/56b383da-4f9b-48b2-9881-31188783d60e-9tfh.svg"
-          className="studentpage-svg"
-        />
 
         <video id="subVideo" className="studentpage-videobox" controls ref={subVideo}></video>
 
