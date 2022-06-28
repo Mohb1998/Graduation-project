@@ -93,6 +93,10 @@ const teacherSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
+  phone: {
+    type: String,
+    required: true
+  },
   password: {
     type: String,
     required: true
@@ -341,22 +345,22 @@ app.get('/Forgotcredentials', (req, res) => {
   let userEmail1;
   let userPassword1;
 
-  Teacher.find({phone: req.query.recipient}, function(err, users){
+  Teacher.find({phone: req.query.recipient}, function(err, teachers){
 
     if(err)
     {
       console.log(err)
     }
     else{
-      users.forEach(function(user){
-          userEmail1 = user.email;
-          userPassword1 = user.password; 
+      teachers.forEach(function(teacher){
+          userEmail1 = teacher.email;
+          userPassword1 = teacher.password; 
           console.log(userEmail1) 
           console.log(userPassword1)      
       })
 
       client.messages.create({
-        body: "Hello Sorry to hear you faced some trouble, here is you email: "+userEmail+" and this is your password: "+userPassword,
+        body: "Hello Sorry to hear you faced some trouble, here is you email: "+userEmail1+" and this is your password: "+userPassword1,
         to: "+" + req.query.recipient,  // Text this number
         from: '+19783545760' // From a valid Twilio number
     }).then((message) => console.log(message.body));
