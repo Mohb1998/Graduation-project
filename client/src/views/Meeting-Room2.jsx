@@ -82,6 +82,7 @@ function MeetingRoom2()
   
     let isPub = false, client, signal;
     let displayStream;
+    let userStream;
   
     const config = {
       iceServers: [
@@ -90,7 +91,13 @@ function MeetingRoom2()
         },
       ],
     };
-    
+
+    function mute()
+    {
+      // const videoaudioTrack = displayStream.getTracks().find(track => track.kind === 'audio');
+      // videoaudioTrack.enabled = false;
+    }
+
   
     //When the app mounts for the first time we will create a new connection to the server
     useEffect(() => {
@@ -154,9 +161,9 @@ function MeetingRoom2()
 
         <video id="subVideo" className="studentpage-videobox" controls ref={subVideo}></video>
 
-        <div className="studentpage-group3">
+        <button className="studentpage-group3">
           <span className="studentpage-text5">Raise hand</span>
-        </div>
+        </button>
 
 
         <div className="studentpage-group6">
@@ -177,12 +184,12 @@ function MeetingRoom2()
             </div> 
 
 
-        <div className="studentpage-group5">
+        <button className="studentpage-group5" >
           <span className="studentpage-text7">Unmute</span>
-        </div>
-        <div className="studentpage-group4">
+        </button>
+        <button className="studentpage-group4" onClick={mute}>
           <span className="studentpage-text8">Mute</span>
-        </div>
+        </button>
 
 
  <div className="studentpage-rectangle20">

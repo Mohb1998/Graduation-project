@@ -13,6 +13,7 @@
   "license": "ISC",
   "proxy": "http://localhost:5000/",
   "dependencies": {
+    "@videosdk.live/rtc-js-prebuilt": "^0.3.6",
     "face-api.js": "^0.22.2",
     "twilio": "^3.77.3"
   }
