@@ -11,8 +11,6 @@ class Forgotcredentials  extends Component
       textmessage: ''
     }
   }
-
-
   textHandler = _ =>
   {
     const { text } = this.state
