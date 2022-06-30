@@ -92,16 +92,16 @@ function MeetingRoom2()
       ],
     };
 
-    function mute()
-    {
+    //function mute()
+    //{
       // const videoaudioTrack = displayStream.getTracks().find(track => track.kind === 'audio');
       // videoaudioTrack.enabled = false;
-    }
+    //}
 
   
     //When the app mounts for the first time we will create a new connection to the server
     useEffect(() => {
-      signal = new IonSFUJSONRPCSignal("ws://176.58.107.71:7000/ws");
+      signal = new IonSFUJSONRPCSignal("ws://176.58.107.71:7000/ws"); //176.58.107.71
       client = new Client(signal, config);
       signal.onopen = () => client.join("test room");
   
@@ -187,7 +187,7 @@ function MeetingRoom2()
         <button className="studentpage-group5" >
           <span className="studentpage-text7">Unmute</span>
         </button>
-        <button className="studentpage-group4" onClick={mute}>
+        <button className="studentpage-group4">
           <span className="studentpage-text8">Mute</span>
         </button>
 
