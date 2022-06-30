@@ -18,7 +18,7 @@ import MeetingRoom from "./views/Meeting-Room.jsx";
 
 import Forgotcredentials from "./views/Forgotcredentials";
 
-import Test from "./views/Test";
+// import Test from "./views/Test";
 
 function App()
 {
@@ -29,9 +29,9 @@ function App()
                 <Route exact path='/' element={<Landingpage/>} />
             </Routes>
 
-            <Routes>
+            {/* <Routes>
                 <Route exact path='Test' element={<Test/>} />
-            </Routes>
+            </Routes> */}
 
             <Routes>
                 <Route exact path='/SigninTeacher' element={<SigninTeacher/>} />
