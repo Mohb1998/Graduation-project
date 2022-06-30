@@ -167,95 +167,97 @@ import Navbar2 from '../components/Navbar2'
 function MeetingRoom() 
 {
 
-  const pubVideo = useRef();
+  // const pubVideo = useRef();
 
-  let isPub, client, signal;
-  let displayStream;
+  // let isPub, client, signal;
+  // let displayStream;
 
-  const config = {
-    iceServers: [
-      {
-        urls: "stun:stun.l.google.com:19302",
-      },
-    ],
-  };
+  // const config = {
+  //   iceServers: [
+  //     {
+  //       urls: "stun:stun.l.google.com:19302",
+  //     },
+  //   ],
+  // };
   
-  // http://localhost:8000/?publish=true
-  //Check the url to see if the client is a publisher or a viewer
-  const URL = new URLSearchParams(window.location.search).get("publish");
-  console.log("url", URL);
-  if (URL) {
-    isPub = true;
-  } else {
-    isPub = false;
-  }
+  // // http://localhost:8000/?publish=true
+  // //Check the url to see if the client is a publisher or a viewer
+  // const URL = new URLSearchParams(window.location.search).get("publish");
+  // console.log("url", URL);
+  // if (URL) {
+  //   isPub = true;
+  // } else {
+  //   isPub = false;
+  // }
 
-  //When the app mounts for the first time we will create a new connection to the server
-  useEffect(() => {
-    signal = new IonSFUJSONRPCSignal("ws://176.58.107.71:7000/ws");
-    client = new Client(signal, config);
-    signal.onopen = () => client.join("test room");
-  }, []);
+  // //When the app mounts for the first time we will create a new connection to the server
+  // useEffect(() => {
+  //   signal = new IonSFUJSONRPCSignal("ws://localhost:7000/ws");
+  //   client = new Client(signal, config);
+  //   signal.onopen = () => client.join("test room");
+  // }, []);
 
 
-  //Teacher
-  const start = (event) => {
+  // //Teacher
+  // const start = (event) => {
     
-    //Camera
-    if (event) {
-      LocalStream.getUserMedia({
-        resolution: 'vga',
-        audio: true,
-        codec: "vp8"
-      }).then((media) => 
-      {
-        pubVideo.current.srcObject = media;
-        pubVideo.current.autoplay = true;
-        pubVideo.current.controls = true;
-        pubVideo.current.muted = false;
-        //pubVideo.current.MediaTrackSupportedConstraints.noiseSuppression = true;
-        client.publish(media);
-      }).catch(console.error);
+  //   //Camera
+  //   if (event) {
+  //     LocalStream.getUserMedia({
+  //       resolution: 'vga',
+  //       audio: true,
+  //       codec: "vp8"
+  //     }).then((media) => 
+  //     {
+  //       pubVideo.current.srcObject = media;
+  //       pubVideo.current.autoplay = true;
+  //       pubVideo.current.controls = true;
+  //       pubVideo.current.muted = false;
+  //       //pubVideo.current.MediaTrackSupportedConstraints.noiseSuppression = true;
+  //       client.publish(media);
+  //     }).catch(console.error);
 
-    }
+  //   }
     
-    //Share screen
-    else
-    {
-      LocalStream.getDisplayMedia({
-        resolution: 'vga',
-        video: true,
-        audio: true,
-        codec: "vp8"
-      })
-      .then((media) => {
-      displayStream = media;
+  //   //Share screen
+  //   else
+  //   {
+  //     LocalStream.getDisplayMedia({
+  //       resolution: 'vga',
+  //       video: true,
+  //       audio: true,
+  //       codec: "vp8"
+  //     })
+  //     .then((media) => {
+  //     displayStream = media;
         
-      navigator.mediaDevices.getUserMedia({ audio : true, video : false })
-        .then((stream) => {
-          var audioTracks = stream.getAudioTracks();
-          for (var i = 0; i < audioTracks.length; i++) {
-            displayStream.addTrack(audioTracks[i]);
-          }
+  //     navigator.mediaDevices.getUserMedia({ audio : true, video : false })
+  //       .then((stream) => {
+  //         var audioTracks = stream.getAudioTracks();
+  //         for (var i = 0; i < audioTracks.length; i++) {
+  //           displayStream.addTrack(audioTracks[i]);
+  //         }
 
-      pubVideo.current.srcObject = displayStream;
-      pubVideo.current.autoplay = true;
-      pubVideo.current.controls = true;
-      pubVideo.current.muted = false;
-      pubVideo.current.audio = true;
-      client.publish(displayStream);
-      });
+  //     pubVideo.current.srcObject = displayStream;
+  //     pubVideo.current.autoplay = true;
+  //     pubVideo.current.controls = true;
+  //     pubVideo.current.muted = false;
+  //     pubVideo.current.audio = true;
+  //     client.publish(displayStream);
+  //     });
 
-      }).catch(console.error);
+  //     }).catch(console.error);
 
-    }
-  }
+  //   }
+  // }
 
   return (
     <div>
           <div>
 
-            <div id="pubVideo" className="bg-black" controls ref={pubVideo}></div>
+            {/* <div id="pubVideo" className="bg-black" controls ref={pubVideo}></div> */}
+            <div id="pubVideo" className="bg-black" controls ></div>
+
 
                 <div className="teacherpage4611-teacherpage4611">\
                   <Navbar2 />                   
@@ -290,11 +292,15 @@ function MeetingRoom()
                   </span>
 
                   <div className="teacherpage4611-group14629">
-                  <button id="bnt_pubcam" className="teacherpage4611-text18" onClick={() => start(true)}>Publish Camera</button>
+                  {/* <button id="bnt_pubcam" className="teacherpage4611-text18" onClick={() => start(true)}>Publish Camera</button> */}
+                  <button id="bnt_pubcam" className="teacherpage4611-text18">Publish Camera</button>
+
                   </div>
 
                   <div className="teacherpage4611-group24631">
-                  <button id="bnt_pubscreen" className="teacherpage4611-text19" onClick={() => start(false)}>Publish Screen</button>
+                  {/* <button id="bnt_pubscreen" className="teacherpage4611-text19" onClick={() => start(false)}>Publish Screen</button> */}
+                  <button id="bnt_pubscreen" className="teacherpage4611-text19">Publish Screen</button>
+
                   </div>
                 </div>
           </div>
