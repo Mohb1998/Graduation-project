@@ -17,12 +17,6 @@ function VideoTest() {
 
       chatEnabled: true,
       screenShareEnabled: true,
-
-      /*
-
-     Other Feature Properties
-      
-      */
     };
 
     const meeting = new VideoSDKMeeting();
