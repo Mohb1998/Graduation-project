@@ -73,7 +73,7 @@ function Signup() {
     }
     else{
       alert("Signup was successfull")
-      window.location.href = "/Signin"
+      window.location.href = "/Signinstudent"
     }
   }
 
@@ -104,27 +104,27 @@ function Signup() {
             className="signup-student-rectangle8"
           />
           <img
-            src="/images/a1e2473c-de8f-46e2-92ff-f89043758ef1-d5dm.svg"
+            src="/images/Seif4.jpeg"
             alt="Rectangle2622010"
             className="signup-student-rectangle26"
           />
           <img
-            src="/images/bbebcfd5-f4a1-421a-9a7e-26b8c2a638f2-ukde.svg"
+            src="/images/Seif2.jpeg"
             alt="Rectangle252209"
             className="signup-student-rectangle25"
           />
           <img
-            src="/images/10cfd503-03d1-45b0-b669-020354d4d695-nz9.svg"
+            src="/images/Seif1.jpeg"
             alt="Rectangle242208"
             className="signup-student-rectangle24"
           />
                     <img
-            src="/images/c85ee465-5ab1-4807-9b58-9291017576fa-w9jj.svg"
+            src="/images/Seif3.jpeg"
             alt="Rectangle232207"
             className="signup-student-rectangle23"
           />
           <img
-            src="/images/6b5adc37-2b2c-47c2-a3e2-577b57319ded-9hb.svg"
+            src="/images/Seif5.jpeg"
             alt="Rectangle232206"
             className="signup-student-rectangle231"
           />

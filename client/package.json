@@ -15,6 +15,7 @@
   "dependencies": {
     "@videosdk.live/rtc-js-prebuilt": "^0.3.6",
     "face-api.js": "^0.22.2",
+    "md5": "^2.3.0",
     "twilio": "^3.77.3"
   }
 }

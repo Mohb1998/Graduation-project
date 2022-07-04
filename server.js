@@ -26,6 +26,7 @@ app.use(express.json())
 var fs = require('fs');
 const path = require('path')
 
+var md5 = require("md5")
 
 // mongodb://localhost:27017   
 mongoose.connect(process.env.MONGODB, {
@@ -65,23 +66,26 @@ const userSchema = new mongoose.Schema({
 })
 const User = mongoose.model("User", userSchema)
 
-const studentSigninSchema = new mongoose.Schema({
-  email: {
-    type: String,
-    required: true,
-  },
-  password: {
-    type: String,
-    required: true
-  },
-  photo: {
-    data: Buffer,
-    contentType: String
-  },
-}, {
-  collection: 'Student-signin'
-})
-const Studentsignin = mongoose.model("Studentsignin", studentSigninSchema)
+
+
+// const studentSigninSchema = new mongoose.Schema({
+//   email: {
+//     type: String,
+//     required: true,
+//   },
+//   password: {
+//     type: String,
+//     required: true
+//   },
+//   photo: {
+//     data: Buffer,
+//     contentType: String
+//   },
+// }, {
+//   collection: 'Student-signin'
+// })
+// const Studentsignin = mongoose.model("Studentsignin", studentSigninSchema)
+
 
 const teacherSchema = new mongoose.Schema({
   name: {
@@ -107,12 +111,18 @@ const teacherSchema = new mongoose.Schema({
 const Teacher = mongoose.model("Teacher", teacherSchema)
 
 
+//Student sign-up
 const userData = (req, res) => {
   const form = new formidable.IncomingForm({
     multiples: true
   });
 
   form.parse(req, (err, fields, file) => {
+
+    console.log(md5(fields.password))
+    fields.password = md5(fields.password)
+    fields.password2 = md5(fields.password2)
+
     if (fields) {
       const {
         name,
@@ -167,58 +177,57 @@ const userData = (req, res) => {
 }
 app.post("/Signup", userData)
 
+//Teacher sign-up
+// const teacherData = (req, res) => {
+//   const form = new formidable.IncomingForm({
+//     multiples: true
+//   });
 
-const teacherData = (req, res) => {
-  const form = new formidable.IncomingForm({
-    multiples: true
-  });
+//   form.parse(req, (err, fields, file) => {
+//     if (fields) {
+//       const {
+//         name,
+//         email,
+//         password,
+//         password2
+//       } = fields
 
-  form.parse(req, (err, fields, file) => {
-    if (fields) {
-      const {
-        name,
-        email,
-        password,
-        password2
-      } = fields
+//       if (!name || !email || !password) {
+//         return res.json({
+//           status: "Emptyfields"
+//         })
+//       }
 
-      if (!name || !email || !password) {
-        return res.json({
-          status: "Emptyfields"
-        })
-      }
+//       if (password != password2)
+//       {
+//         return res.json({
+//           status: "Passwords missmatch"
+//         })
+//       }
+//     }
 
-      if (password != password2)
-      {
-        return res.json({
-          status: "Passwords missmatch"
-        })
-      }
-    }
+//       const teacher = new Teacher(fields)
+//       teacher.save((err, teacher) => {
+//         if (teacher) {
+//           return res.json({
+//             status: 'ok',
+//             user: true
+//           })
+//         } else {
+//           return res.json({
+//             status: 'error',
+//             user: false
+//           })
+//         }
 
-      const teacher = new Teacher(fields)
-      teacher.save((err, teacher) => {
-        if (teacher) {
-          return res.json({
-            status: 'ok',
-            user: true
-          })
-        } else {
-          return res.json({
-            status: 'error',
-            user: false
-          })
-        }
-
-      })
+//       })
     
-  })
-}
-app.post("/SignupTeacher", teacherData)
+//   })
+// }
+// app.post("/SignupTeacher", teacherData)
 
-
+//Teacher sign-in
 app.post("/Signin", async (req, res) => {
-
   const teacher = await Teacher.findOne({
     email: req.body.email,
     password: req.body.password,
@@ -240,21 +249,23 @@ app.post("/Signin", async (req, res) => {
 
 })
 
+
+//Sign-in student
 const signinData = (req, res) => {
-  console.log("Wasal hena")
   const formsignin = new formidable.IncomingForm({
     multiples: true
   });
 
   formsignin.parse(req, (err, fields, file) => {
 
-    console.log("W delwa2ti hena")
+    fields.password = md5(fields.password)
     console.log(fields)
+
     if (fields) {
       const {
         email,
         password,
-        photo,
+        //photo,
       } = fields
 
       if (!email || !password) {
@@ -265,29 +276,50 @@ const signinData = (req, res) => {
 
     }
 
-    if (file.photo) {
-      console.log("W a5iran hena")
-      if (file.photo.size > 4000000) {
-        return res.json({
-          status: "Image is too large"
-        })
-      }
+    // if (file.photo) {
+    //   console.log("W a5iran hena")
+    //   if (file.photo.size > 4000000) {
+    //     return res.json({
+    //       status: "Image is too large"
+    //     })
+    //   }
 
-      const studentsignin = new Studentsignin(fields)
-      studentsignin.photo.data = fs.readFileSync(file.photo.filepath)
-      studentsignin.photo.contentType = file.photo.type
+      // const studentsignin = new Studentsignin(fields)
+      // studentsignin.photo.data = fs.readFileSync(file.photo.filepath)
+      // studentsignin.photo.contentType = file.photo.type
 
-      studentsignin.save((err, studentsignin) => {
-        if (studentsignin) {
-          return res.json({
-            status: 'ok',
-          })
-        } else {
-          return res.json({
-            status: 'error',
-          })
-        }
+      const studentsignin = User.findOne({
+        email: fields.email,
+        password: fields.password,
+      })
 
+      console.log(fields.email)
+      console.log(fields.password)
+
+      // studentsignin.save((err, studentsignin) => {
+      //   if (studentsignin) {
+      //     return res.json({
+      //       status: 'ok',
+      //     })
+      //   } else {
+      //     return res.json({
+      //       status: 'error',
+      //     })
+      //   }
+
+      // })
+    //}
+
+    if(studentsignin){
+      return res.json({
+        status: 'ok',
+        teacher : true
+      })
+    }
+  
+     else {
+      return res.json({
+        status: 'error'
       })
     }
 

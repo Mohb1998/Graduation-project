@@ -13,6 +13,7 @@ function Navbar(props)
                 <button className={styles['text36']}>
                     SMR
                 </button>
+                <img src="/images/Logo.png" style={{paddingLeft:"5px", paddingTop:"5px"}}></img> 
             </AnchorLink>
 
             <AnchorLink href='#Features'>

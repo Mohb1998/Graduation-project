@@ -41,9 +41,9 @@ function Signinstudent () {
     {
       alert("Something went wrong on our server please try again later")
     }
-    else{
+    else if(resp.status === "ok"){
       alert("Signin was successfull")
-      // window.location.href = ""
+      window.location.href = "/StudentHomePage"
     }
   }
    
@@ -90,7 +90,7 @@ function Signinstudent () {
     const [values, setValues] = useState({
         email: '',
         password: '',
-        photo: '',
+        //photo: '',
         error: '',
         success: false,
         formData: new FormData()
@@ -98,7 +98,7 @@ function Signinstudent () {
     
       const {
         formData,
-        photo,
+        //photo,
         email,
         password,
         error,

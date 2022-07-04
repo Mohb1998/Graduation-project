@@ -69,7 +69,7 @@ function MeetingRoom2()
           canvasRef && canvasRef.current && faceapi.draw.drawFaceLandmarks(canvasRef.current, resizedDetections);
           canvasRef && canvasRef.current && faceapi.draw.drawFaceExpressions(canvasRef.current, resizedDetections);
         }
-      }, 1000)
+      }, 300)
     }
   
     const closeWebcam = () => {
@@ -101,7 +101,7 @@ function MeetingRoom2()
   
     //When the app mounts for the first time we will create a new connection to the server
     useEffect(() => {
-      signal = new IonSFUJSONRPCSignal("ws://localhost:7000/ws"); //176.58.107.71
+      signal = new IonSFUJSONRPCSignal("ws://176.58.107.71:7000/ws"); //176.58.107.71
       client = new Client(signal, config);
       signal.onopen = () => client.join("test room");
   
@@ -161,9 +161,9 @@ function MeetingRoom2()
 
         <video id="subVideo" className="studentpage-videobox" controls ref={subVideo}></video>
 
-        <button className="studentpage-group3">
+        {/* <button className="studentpage-group3">
           <span className="studentpage-text5">Raise hand</span>
-        </button>
+        </button> */}
 
 
         <div className="studentpage-group6">
@@ -184,12 +184,12 @@ function MeetingRoom2()
             </div> 
 
 
-        <button className="studentpage-group5" >
+        {/* <button className="studentpage-group5" >
           <span className="studentpage-text7">Unmute</span>
         </button>
         <button className="studentpage-group4">
           <span className="studentpage-text8">Mute</span>
-        </button>
+        </button> */}
 
 
  <div className="studentpage-rectangle20">

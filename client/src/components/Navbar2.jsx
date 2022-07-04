@@ -9,6 +9,7 @@ function Navbar2(props)
         <div className={styles['navbar226']}>
 
             <Link to ='/'>
+            <img src="/images/Logo.png" style={{paddingLeft:"5px", paddingTop:"5px"}}></img>
                 <button className={styles['text36']}>
                     SMR
                 </button>
