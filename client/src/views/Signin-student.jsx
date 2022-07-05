@@ -19,33 +19,63 @@ function Signinstudent () {
   let videoRef = useRef(null);
   let photoRef = useRef(null);
 
-  async function handleRegister(data){
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  async function handleRegister(event) {
+    event.preventDefault()
+
     const response = await fetch("/SigninStudent", {
       method: "POST",
-      body: data,
-      multiples: true
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
     })
 
-    const resp = await response.json()
-    console.log(resp)
-    
-    if(resp.status === "Emptyfields")
+    const data = await response.json()
+
+    if(data.status === "ok")
     {
-      alert("You have some empty fields, please fill all fields")
-    }
-    else if(resp.status === "Image is too large")
-    {
-      alert("Please upload smaller images")
-    }
-    else if(resp.status === "error")
-    {
-      alert("Something went wrong on our server please try again later")
-    }
-    else if(resp.status === "ok"){
-      alert("Signin was successfull")
+      alert('Sign in successful')
       window.location.href = "/StudentHomePage"
     }
+    else {
+      alert('Please check your username and password')
+    }
+
   }
+
+  // async function handleRegister(data){
+  //   const response = await fetch("/SigninStudent", {
+  //     method: "POST",
+  //     body: data,
+  //     multiples: true
+  //   })
+
+  //   const resp = await response.json()
+  //   console.log(resp)
+    
+  //   if(resp.status === "Emptyfields")
+  //   {
+  //     alert("You have some empty fields, please fill all fields")
+  //   }
+  //   else if(resp.status === "Image is too large")
+  //   {
+  //     alert("Please upload smaller images")
+  //   }
+  //   else if(resp.status === "error")
+  //   {
+  //     alert("Something went wrong on our server please try again later")
+  //   }
+  //   else if(resp.status === "ok"){
+  //     alert("Signin was successfull")
+  //     window.location.href = "/StudentHomePage"
+  //   }
+  // }
    
     const getVideo = () => {
       navigator.mediaDevices
@@ -87,32 +117,32 @@ function Signinstudent () {
     }, [videoRef]);
 
 
-    const [values, setValues] = useState({
-        email: '',
-        password: '',
-        //photo: '',
-        error: '',
-        success: false,
-        formData: new FormData()
-      })
+    // const [values, setValues] = useState({
+    //     email: '',
+    //     password: '',
+    //     //photo: '',
+    //     error: '',
+    //     success: false,
+    //     formData: new FormData()
+    //   })
     
-      const {
-        formData,
-        //photo,
-        email,
-        password,
-        error,
-        success
-      } = values
+    //   const {
+    //     formData,
+    //     //photo,
+    //     email,
+    //     password,
+    //     error,
+    //     success
+    //   } = values
     
-      const onHandleChange = name => event => {
-        const value = (name === 'photo') ? event.target.files[0] : event.target.value;
-        formData.set(name, value);
-        setValues({
-          ...values,
-          [name]: value
-        })
-      }
+      // const onHandleChange = name => event => {
+      //   const value = (name === 'photo') ? event.target.files[0] : event.target.value;
+      //   formData.set(name, value);
+      //   setValues({
+      //     ...values,
+      //     [name]: value
+      //   })
+      // }
 
   return (
 
@@ -128,16 +158,16 @@ function Signinstudent () {
       className="signinstudent-rectangle8"
     />
 
-    <Form>
+    <Form onSubmit={handleRegister}>
 
     <span className="signinstudent-text1">Sign in</span>
           <span className="signinstudent-text2">Email :</span>
           <span className="signinstudent-text3">Password :</span>
 
-      <Form.Control style={{width:"526px"}} className="signinstudent-rectangle9" type="email" placeholder="Enter email" onChange={onHandleChange('email')}/>
-      <Form.Control style={{width:"526px"}} className="signinstudent-rectangle10" type="password" placeholder="Password" onChange={onHandleChange('password')}/>
+      <Form.Control style={{width:"526px"}} className="signinstudent-rectangle9" type="email" placeholder="Enter email" onChange={(e)=> setEmail(e.target.value)}/>
+      <Form.Control style={{width:"526px"}} className="signinstudent-rectangle10" type="password" placeholder="Password" onChange={(e)=> setPassword(e.target.value)}/>
 
-      <button className="signinstudent-button" onClick={() => handleRegister(formData)}>
+      <button className="signinstudent-button" type="submit">
           <img src="/images/5600082a-143e-43d6-8ef4-aa97acb9f613-vn96.svg" alt="Rectangle220910" className="signinstudent-rectangle2" />
           <span className="signinstudent-text">Sign in</span>
       </button>

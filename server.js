@@ -251,81 +251,103 @@ app.post("/Signin", async (req, res) => {
 
 
 //Sign-in student
-const signinData = (req, res) => {
-  const formsignin = new formidable.IncomingForm({
-    multiples: true
-  });
+// const signinData = (req, res) => {
+//   const formsignin = new formidable.IncomingForm({
+//     multiples: true
+//   });
 
-  formsignin.parse(req, (err, fields, file) => {
+//   formsignin.parse(req, (err, fields, file) => {
 
-    fields.password = md5(fields.password)
-    console.log(fields)
+//     fields.password = md5(fields.password)
+//     console.log(fields)
 
-    if (fields) {
-      const {
-        email,
-        password,
-        //photo,
-      } = fields
+//     if (fields) {
+//       const {
+//         email,
+//         password,
+//         //photo,
+//       } = fields
 
-      if (!email || !password) {
-        return res.json({
-          status:"Emptyfields"
-        })
-      }
+//       if (!email || !password) {
+//         return res.json({
+//           status:"Emptyfields"
+//         })
+//       }
 
-    }
+//     }
 
-    // if (file.photo) {
-    //   console.log("W a5iran hena")
-    //   if (file.photo.size > 4000000) {
-    //     return res.json({
-    //       status: "Image is too large"
-    //     })
-    //   }
+//     // if (file.photo) {
+//     //   console.log("W a5iran hena")
+//     //   if (file.photo.size > 4000000) {
+//     //     return res.json({
+//     //       status: "Image is too large"
+//     //     })
+//     //   }
 
-      // const studentsignin = new Studentsignin(fields)
-      // studentsignin.photo.data = fs.readFileSync(file.photo.filepath)
-      // studentsignin.photo.contentType = file.photo.type
+//       // const studentsignin = new Studentsignin(fields)
+//       // studentsignin.photo.data = fs.readFileSync(file.photo.filepath)
+//       // studentsignin.photo.contentType = file.photo.type
 
-      const studentsignin = User.findOne({
-        email: fields.email,
-        password: fields.password,
-      })
+//       const studentsignin = User.findOne({
+//         email: fields.email,
+//         password: fields.password,
+//       })
 
-      console.log(fields.email)
-      console.log(fields.password)
+//       console.log(fields.email)
+//       console.log(fields.password)
 
-      // studentsignin.save((err, studentsignin) => {
-      //   if (studentsignin) {
-      //     return res.json({
-      //       status: 'ok',
-      //     })
-      //   } else {
-      //     return res.json({
-      //       status: 'error',
-      //     })
-      //   }
+//       // studentsignin.save((err, studentsignin) => {
+//       //   if (studentsignin) {
+//       //     return res.json({
+//       //       status: 'ok',
+//       //     })
+//       //   } else {
+//       //     return res.json({
+//       //       status: 'error',
+//       //     })
+//       //   }
 
-      // })
-    //}
+//       // })
+//     //}
 
-    if(studentsignin){
-      return res.json({
-        status: 'ok',
-        teacher : true
-      })
-    }
+//     if(studentsignin){
+//       return res.json({
+//         status: 'ok',
+//         teacher : true
+//       })
+//     }
   
-     else {
-      return res.json({
-        status: 'error'
-      })
-    }
+//      else {
+//       return res.json({
+//         status: 'error'
+//       })
+//     }
 
+//   })
+// }
+// app.post("/SigninStudent", signinData)
+
+app.post("/SigninStudent", async (req, res) => {
+
+  req.body.password = md5(req.body.password)
+  const student = await User.findOne({
+    email: req.body.email,
+    password: req.body.password,
   })
-}
-app.post("/SigninStudent", signinData)
+
+   if(student){
+    return res.json({
+      status: 'ok',
+    })
+  }
+
+   else {
+    return res.json({
+      status: 'error'
+    })
+  }
+
+})
 
 //This will be the function used to retrieve the data from the database and access the images
 //We should use the email as it is a unique atribute and can't be a duplicate
